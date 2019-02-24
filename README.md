@@ -21,6 +21,8 @@
      ```
      git clone https://github.com/thiago-rezende/cmake_sample_proj.git
      cd cmake_sample_proj
+     mkdir build
+     cd build
      cmake .. -DCMAKE_INSTALL_PREFIX=..
      ```
  - if you want a specific generator just use the following command
