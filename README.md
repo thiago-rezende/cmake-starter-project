@@ -24,11 +24,12 @@
      cd cmake_sample_proj
      mkdir build
      cd build
-     cmake .. -DCMAKE_INSTALL_PREFIX=..
+     cmake ..
+     make && make install
      ```
  - if you want a specific generator just use the following command
      ```
-     cmake .. -DCMAKE_INSTALL_PREFIX=.. -G"YOUR-GENERATOR-HERE"
+     cmake .. -G"YOUR-GENERATOR-HERE"
      ```
  
  - Compatibility
@@ -36,5 +37,5 @@
  | Toolset  |    Windows    |     Linux     |     MacOS     |
  |:--------:|:-------------:|:-------------:|:-------------:|
  | GCC      |    Passing    |    Passing    |   Not Tested  |
- | LLVM     |   Not Tested  |   Not Tested  |   Not Tested  |
+ | LLVM     |   Not Tested  |    Passing    |   Not Tested  |
  | MSVC     |    Passing    |    -------    |   ----------  |
