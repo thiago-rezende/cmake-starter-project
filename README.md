@@ -9,7 +9,6 @@
     .
     ├── bin                      # Binaries will be here.
     ├── proj-test                # The main project.
-    │   ├── include              # Headers folder.
     │   └── src                  # Source folder.
     │       ├── main.cpp         # Your code goes here.
     |       └── CMakeLists.txt   # Project CMake build script.
