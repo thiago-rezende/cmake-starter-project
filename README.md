@@ -2,6 +2,7 @@
 
 <!--[![Build Status][build-shield]][build-url]-->
 [![CircleCI](https://circleci.com/gh/thiago-rezende/ci-study.svg?style=svg)](https://circleci.com/gh/thiago-rezende/ci-study)
+[![Build status](https://ci.appveyor.com/api/projects/status/oo46hf6k7cugb3wd?svg=true)](https://ci.appveyor.com/project/thiago-rezende/cmake-starter-project)
 [![MIT License][license-shield]][license-url]
 [![CMake 3.10.0][cmake-shield]][cmake-url]
 [![C++ 17][cpp-shield]][cpp-url]
