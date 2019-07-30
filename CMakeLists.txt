@@ -29,4 +29,3 @@ set(CMAKE_INSTALL_PREFIX ${CMAKE_SOURCE_DIR})
 
 # Adding the source folder
 add_subdirectory(src)
-
