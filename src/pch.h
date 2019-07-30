@@ -1,4 +1,5 @@
-#pragma once
+#ifndef PCH_H
+#define PCH_H
 
 #include <iostream>
 #include <memory>
@@ -14,4 +15,6 @@
 
 #ifdef _WIN32
 #include <windows.h>
-#endif
+#endif /* _WIN32 */
+
+#endif /* PCH_H */

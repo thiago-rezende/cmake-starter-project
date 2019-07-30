@@ -11,10 +11,10 @@ cmake_policy(SET CMP0076 NEW)
 set(VENDOR ${CMAKE_SOURCE_DIR}/vendor)
 
 # Setting CMake module path
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${VENDOR}/cotire/CMake)
+list(APPEND CMAKE_MODULE_PATH ${VENDOR}/cmake-pch)
 
-# Loading Cotire
-include(cotire)
+# Loading CMake pch module
+include(PrecompiledHeader)
 
 # Setting CXX version
 set(CMAKE_CXX_STANDARD_REQUIRED 17)

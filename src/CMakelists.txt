@@ -2,11 +2,13 @@
 add_executable(myapp ${SOURCES})
 # Setting the app properties for the app
 set_property(TARGET myapp PROPERTY CXX_STANDARD 17)
-set_target_properties(myapp PROPERTIES COTIRE_CXX_PREFIX_HEADER_INIT "pch.h")
 
 # Setting the sources for the app
 target_sources(myapp
 PUBLIC
+    # Precompiled headers
+    "pch.h"
+    "pch.cpp"
     # Main application
     "main.cpp"
 )
@@ -19,5 +21,5 @@ add_custom_target(copy_resources ALL
 # Setting the install command to the app
 install(TARGETS myapp RUNTIME DESTINATION bin)
 
-# Cotire
-cotire(myapp)
+# Precompiled deader setup
+add_precompiled_header(myapp pch.h pch.cpp)
