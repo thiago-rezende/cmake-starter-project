@@ -13,6 +13,16 @@ jobs:
       - run: 'cmake .'
       - run: 'make'
       - run: './bin/myapp'
+  build_mac:
+    macos:
+      xcode: "10.0.0"
+    steps:
+      - checkout
+      - run: 'brew install cmake'
+      - run: 'git submodule sync && git submodule update --init'
+      - run: 'cmake .'
+      - run: 'cmake --build .'
+      - run: './bin/myapp'
 #  test:
 #    docker:
 #      - image: ubuntu:latest
