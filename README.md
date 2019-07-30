@@ -32,10 +32,14 @@
  - Project structure
  ```
     .
+    ├── .github                  # Repository stuff.
     ├── bin                      # Binaries will be here.
     ├── src                      # Source folder.
+    |    ├── assets              # Assets folder.
     |    ├── main.cpp            # Your code goes here.
     |    └── CMakeLists.txt      # Project CMake build script.
+    ├── vendor                   # Third-party packages will be here.
+    |    └── cotire              # Cotire submodule.
     └── CMakeLists.txt           # Main CMake build script.
 ```
  ### How to Use
