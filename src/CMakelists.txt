@@ -1,0 +1,23 @@
+# Setting the executable for the app
+add_executable(myapp ${SOURCES})
+# Setting the app properties for the app
+set_property(TARGET myapp PROPERTY CXX_STANDARD 17)
+set_target_properties(myapp PROPERTIES COTIRE_CXX_PREFIX_HEADER_INIT "pch.h")
+
+# Setting the sources for the app
+target_sources(myapp
+PUBLIC
+    # Main application
+    "main.cpp"
+)
+
+# Setting custom commandos to copy all needed files to the right location
+add_custom_target(copy_resources ALL
+    COMMAND cmake -E copy_directory ${CMAKE_SOURCE_DIR}/src/assets ${CMAKE_BINARY_DIR}/bin/assets
+    DEPENDS myapp)
+
+# Setting the install command to the app
+install(TARGETS myapp RUNTIME DESTINATION bin)
+
+# Cotire
+cotire(myapp)

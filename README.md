@@ -1,41 +1,71 @@
 # C-Plus-Plus Sample Project Using CMake
 
-![](https://img.shields.io/badge/build-passing-green.svg) ![](https://img.shields.io/badge/CMake-3.14.0-blue.svg) ![](https://img.shields.io/badge/C++-17-orange.svg)
+[![Build Status][build-shield]][build-url]
+[![MIT License][license-shield]][license-url]
+[![CMake 3.10.0][cmake-shield]][cmake-url]
+[![C++ 17][cpp-shield]][cpp-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
- - A simple c-plus-plus project using CMake.
- 
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/github_username/repo">
+    <img src=".github/logo.png" alt="Logo" width="100" height="100">
+  </a>
+
+  <h3 align="center">CMake Starter Project</h3>
+
+  <p align="center">
+    A Simple C++ Starter Project Using CMake
+    <br />
+    <!--<a href="https://github.com/github_username/repo"><strong>Explore the docs »</strong></a>-->
+    <br />
+    <br />
+    <!--<a href="https://github.com/github_username/repo">View Demo</a>
+    ·-->
+    <a href="https://github.com/github_username/repo/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/github_username/repo/issues">Request Feature</a>
+  </p>
+</p>
+
  - Project structure
  ```
     .
     ├── bin                      # Binaries will be here.
-    ├── proj-test                # The main project.
-    │   ├── include              # Headers folder.
-    │   └── src                  # Source folder.
-    │       ├── main.cpp         # Your code goes here.
-    |       └── CMakeLists.txt   # Project CMake build script.
+    ├── src                      # Source folder.
+    |    ├── main.cpp            # Your code goes here.
+    |    └── CMakeLists.txt      # Project CMake build script.
     └── CMakeLists.txt           # Main CMake build script.
 ```
  ### How to Use
- - first download and install CMake [here](https://cmake.org/download/), is highly recommended to read the documentation [here](https://cmake.org/cmake-tutorial/) to extend the project.
+ - first download and install CMake [here][cmake-url], is highly recommended to read the documentation [here](https://cmake.org/cmake-tutorial/) to extend the project.
  - execute the following commands
- 
+
      ```
-     git clone https://github.com/thiago-rezende/cmake_sample_proj.git
-     cd cmake_sample_proj
+     git clone https://github.com/thiago-rezende/cmake_starter_project.git
+     cd cmake_starter_project
      mkdir build
      cd build
      cmake ..
-     make && make install
+     make all_unity
      ```
- - if you want a specific generator just use the following command
-     ```
-     cmake .. -G"YOUR-GENERATOR-HERE"
-     ```
- 
+
  - Compatibility
- 
+
  | Toolset  |    Windows    |     Linux     |     MacOS     |
  |:--------:|:-------------:|:-------------:|:-------------:|
- | GCC      |    Passing    |    Passing    |   Not Tested  |
- | LLVM     |   Not Tested  |    Passing    |   Not Tested  |
- | MSVC     |    Passing    |    -------    |   ----------  |
+ | GCC      |       ✔️      |    ✔️        |   Not Tested  |
+ | LLVM     |       ✔️      |    ✔️        |   Not Tested  |
+ | MSVC     |       ✔️      |    -------   |   ----------  |
+
+[build-shield]: https://img.shields.io/badge/build-passing-brightgreen.svg?style=flat-square
+[build-url]: #
+[license-shield]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
+[license-url]: https://opensource.org/licenses/MIT
+[cmake-shield]: https://img.shields.io/badge/CMake-3.10.0-blueviolet.svg?style=flat-square
+[cmake-url]: https://cmake.org/
+[cpp-shield]: https://img.shields.io/badge/C++-17-orange.svg?style=flat-square
+[cpp-url]: https://cmake.org/
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/thiago-horus-rezende/
