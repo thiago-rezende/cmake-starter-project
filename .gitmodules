@@ -1,4 +1,4 @@
 [submodule "vendor/cmake-pch"]
 	path = vendor/cmake-pch
-	url = git@github.com:larsch/cmake-precompiled-header.git
+	url = https://github.com/larsch/cmake-precompiled-header.git
 	branch = master

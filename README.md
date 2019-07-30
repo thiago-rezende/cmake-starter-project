@@ -21,8 +21,6 @@
     <a href="#how-to-use"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <!--<a href="https://github.com/thiago-rezende/cmake-starter-project">View Demo</a>
-    ·-->
     <a href="https://github.com/thiago-rezende/cmake-starter-project/issues">Report Bug</a>
     ·
     <a href="https://github.com/thiago-rezende/cmake-starter-project/issues">Request Feature</a>
