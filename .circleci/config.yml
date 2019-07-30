@@ -2,6 +2,8 @@ version: 2
 
 jobs:
   build:
+    branches:
+      - master
     docker:
       - image: "debian:stretch"
      steps:
