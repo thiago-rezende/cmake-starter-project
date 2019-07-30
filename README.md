@@ -1,4 +1,4 @@
-# C-Plus-Plus Sample Project Using CMake
+# C-Plus-Plus Starter Project Using CMake
 
 [![Build Status][build-shield]][build-url]
 [![MIT License][license-shield]][license-url]
@@ -9,7 +9,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/github_username/repo">
+  <a href="https://github.com/thiago-rezende/cmake-starter-project">
     <img src=".github/logo.png" alt="Logo" width="100" height="100">
   </a>
 
@@ -18,14 +18,14 @@
   <p align="center">
     A Simple C++ Starter Project Using CMake
     <br />
-    <!--<a href="https://github.com/github_username/repo"><strong>Explore the docs »</strong></a>-->
+    <a href="https://github.com/thiago-rezende/cmake-starter-project#how-to-use"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <!--<a href="https://github.com/github_username/repo">View Demo</a>
+    <!--<a href="https://github.com/thiago-rezende/cmake-starter-project">View Demo</a>
     ·-->
-    <a href="https://github.com/github_username/repo/issues">Report Bug</a>
+    <a href="https://github.com/thiago-rezende/cmake-starter-project/issues">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/repo/issues">Request Feature</a>
+    <a href="https://github.com/thiago-rezende/cmake-starter-project/issues">Request Feature</a>
   </p>
 </p>
 
