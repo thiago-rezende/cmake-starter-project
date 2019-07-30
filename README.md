@@ -18,7 +18,7 @@
   <p align="center">
     A Simple C++ Starter Project Using CMake
     <br />
-    <a href="https://github.com/thiago-rezende/cmake-starter-project#how-to-use"><strong>Explore the docs »</strong></a>
+    <a href="#how-to-use"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <!--<a href="https://github.com/thiago-rezende/cmake-starter-project">View Demo</a>
