@@ -5,22 +5,21 @@ jobs:
       - image: ubuntu:latest
     steps:
       - checkout
-      - run: git submodule sync
       - run: git submodule update --init    
       - run: cmake -H. -Bbuild
       - run: cmake --build build
-  test:
-    docker:
-      - image: ubuntu:latest
-    steps:
-      - checkout
-      - run: git submodule sync
-      - run: git submodule update --init    
-      - run: cmake -H. -Bbuild
-      - run: cmake --build build
-workflows:
-  version: 2
-  build_and_test:
-    jobs:
-      - build
-      - test
+#  test:
+#    docker:
+#      - image: ubuntu:latest
+#    steps:
+#      - checkout
+#      - run: git submodule sync
+#      - run: git submodule update --init    
+#      - run: cmake -H. -Bbuild
+#      - run: cmake --build build
+#workflows:
+#  version: 2
+#  build_and_test:
+#    jobs:
+#      - build
+#      - test
