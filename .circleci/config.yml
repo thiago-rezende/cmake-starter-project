@@ -1,29 +1,26 @@
 version: 2
-
 jobs:
-  - build:
-      branches:
-        - master
-      docker:
-        - image: "debian:stretch"
-       steps:
-        - checkout
-        - run:
-            name: Installing SUDO
-            command: 'apt-get update && apt-get install -y sudo && rm -rf /var/lib/apt/lists/*'
-        - run:
-            name: Installing GCC
-            command: 'apt-get update && apt-get install -y gcc g++'
-        - run:
-            name: Install CMAKE
-            command: 'apt-get update && sudo apt-get install -y cmake'
-        - run:
-            name: Creating Build Files
-            command: 'cmake -H. -Bbuild'
-        - run:
-            name: Creating Binary Files
-            command: 'cmake --build build'
-        - run:
-            name: Running the app
-            command: './bin/myapp'
-  
+  build:
+    docker:
+      - image: ubuntu:latest
+    steps:
+      - checkout
+      - run: git submodule sync
+      - run: git submodule update --init    
+      - run: cmake -H. -Bbuild
+      - run: cmake --build build
+  test:
+    docker:
+      - image: ubuntu:latest
+    steps:
+      - checkout
+      - run: git submodule sync
+      - run: git submodule update --init    
+      - run: cmake -H. -Bbuild
+      - run: cmake --build build
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test
