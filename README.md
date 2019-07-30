@@ -1,10 +1,13 @@
 # C-Plus-Plus Starter Project Using CMake
 
-[![Build Status][build-shield]][build-url]
+<!--[![Build Status][build-shield]][build-url]-->
+[![CircleCI](https://circleci.com/gh/thiago-rezende/ci-study.svg?style=svg)](https://circleci.com/gh/thiago-rezende/ci-study)
 [![MIT License][license-shield]][license-url]
 [![CMake 3.10.0][cmake-shield]][cmake-url]
 [![C++ 17][cpp-shield]][cpp-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
+
+
 
 <!-- PROJECT LOGO -->
 <br />
