@@ -36,10 +36,10 @@
     ├── bin                      # Binaries will be here.
     ├── src                      # Source folder.
     |    ├── assets              # Assets folder.
-    |    ├── main.cpp            # Your code goes here.
+    |    ├── main.cpp            # Application entry point.
     |    └── CMakeLists.txt      # Project CMake build script.
     ├── vendor                   # Third-party packages will be here.
-    |    └── cotire              # Cotire submodule.
+    |    └── cmake-pch           # CMake precompiled hearder tool.
     └── CMakeLists.txt           # Main CMake build script.
 ```
  ### How to Use
@@ -47,12 +47,12 @@
  - execute the following commands
 
      ```
-     git clone https://github.com/thiago-rezende/cmake_starter_project.git
-     cd cmake_starter_project
+     git clone https://github.com/thiago-rezende/cmake-starter-project.git
+     cd cmake-starter-project
      mkdir build
      cd build
      cmake ..
-     make all_unity
+     make && make install
      ```
 
  - Compatibility
