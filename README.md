@@ -37,6 +37,8 @@
     ├── src                      # Source folder.
     |    ├── assets              # Assets folder.
     |    ├── main.cpp            # Application entry point.
+    |    ├── pch.h               # Precompiled header file.
+    |    ├── pch.cpp             # Procompiled deader source file.
     |    └── CMakeLists.txt      # Project CMake build script.
     ├── vendor                   # Third-party packages will be here.
     |    └── cmake-pch           # CMake precompiled hearder tool.
