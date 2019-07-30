@@ -4,9 +4,6 @@ cmake_minimum_required(VERSION 3.10.0)
 # Setting up the project name and version
 project(MyProject VERSION 1.0.0)
 
-# Setting cmake policy
-# cmake_policy(SET CMP0076 NEW)
-
 # Setting the path to the vendor folder
 set(VENDOR ${CMAKE_SOURCE_DIR}/vendor)
 
