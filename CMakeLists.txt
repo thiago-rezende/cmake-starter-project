@@ -1,5 +1,35 @@
 # Minimun versior to run the script
-cmake_minimum_required(VERSION 3.10.0)
+cmake_minimum_required(VERSION 3.1...3.15)
+
+# Chicking version
+if(${CMAKE_VERSION} VERSION_LESS 3.12)
+    cmake_policy(VERISON ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
+endif()
+
+set(default_build_type "Release")
+if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+  message(STATUS "Setting build type to '${default_build_type}' as none was specified.")
+  set(CMAKE_BUILD_TYPE "${default_build_type}" CACHE
+      STRING "Choose the type of build." FORCE)
+  # Set the possible values of build type for cmake-gui
+  set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS
+    "Debug" "Release" "MinSizeRel" "RelWithDebInfo")
+endif()
+
+# ---- Windows VCPKG ----
+# Setting vckpg tollchain file if exists
+if(DEFINED ENV{VCPKG_ROOT} AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
+    message(STATUS "Setting vcpkg toolchaing file $ENV{VCPKG_ROOT}")
+    set(CMAKE_TOOLCHAIN_FILE "$ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake" CACHE STRING "")
+
+    if(DEFINED ENV{VCPKG_DEFAULT_TRIPLET} AND NOT DEFINED VCPKG_TARGET_TRIPLET)
+        message(STATUS "Setting default triplet $ENV{VCPKG_DEFAULT_TRIPLET}")
+        set(VCPKG_TARGET_TRIPLET "$ENV{VCPKG_DEFAULT_TRIPLET}" CACHE STRING "")
+    endif()
+else()
+    message(STATUS "On Windows is recomended to use the VCPKG")
+endif()
+# -----------------------
 
 # Setting up the project name and version
 project(MyProject VERSION 1.0.0)
