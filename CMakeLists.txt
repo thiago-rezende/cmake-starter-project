@@ -26,8 +26,6 @@ if(DEFINED ENV{VCPKG_ROOT} AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
         message(STATUS "Setting default triplet $ENV{VCPKG_DEFAULT_TRIPLET}")
         set(VCPKG_TARGET_TRIPLET "$ENV{VCPKG_DEFAULT_TRIPLET}" CACHE STRING "")
     endif()
-else()
-    message(STATUS "On Windows is recomended to use the VCPKG")
 endif()
 # -----------------------
 
