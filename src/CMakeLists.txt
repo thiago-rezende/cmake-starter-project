@@ -15,6 +15,7 @@ set_property(TARGET myapp PROPERTY CXX_STANDARD 17)
 # Setting custom commandos to copy all needed files to the right location
 add_custom_target(copy_resources ALL
     COMMAND cmake -E copy_directory ${CMAKE_SOURCE_DIR}/src/assets ${CMAKE_BINARY_DIR}/bin/assets
+    COMMAND cmake -E copy_directory ${CMAKE_SOURCE_DIR}/src/assets ${CMAKE_SOURCE_DIR}/bin/assets
     DEPENDS myapp)
 
 # Setting the install command to the app
