@@ -6,6 +6,9 @@
 bin/
 build/
 
+### all-contributors ###
+node_modules
+
 ### CMake ###
 CMakeLists.txt.user
 CMakeCache.txt
