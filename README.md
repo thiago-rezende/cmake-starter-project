@@ -2,7 +2,7 @@
 
 <!-- PROJECT LOGO -->
 <br />
-<p align="center">
+<div align="center">
   <a href="https://github.com/thiago-rezende/cmake-starter-project">
     <img src=".github/logo.png" alt="Logo" width="100" height="100">
   </a>
@@ -19,7 +19,7 @@
     ·
     <a href="https://github.com/thiago-rezende/cmake-starter-project/issues">Request Feature</a>
   </p>
-</p>
+</div>
 
  - Project structure
  ```
