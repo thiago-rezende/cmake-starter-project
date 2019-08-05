@@ -4,6 +4,10 @@
 # see https://hub.docker.com/_/gcc/
 image: gcc:latest
 
+# setting env variables
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
 build:
   stage: build
   # instead of calling g++ directly you can also use some build toolkit like make
