@@ -51,7 +51,7 @@
  - execute the following commands
 
      ```
-     git clone https://github.com/thiago-rezende/cmake-starter-project.git
+     git clone --recursive https://github.com/thiago-rezende/cmake-starter-project.git
      cd cmake-starter-project
      mkdir build
      cd build
