@@ -1,15 +1,5 @@
 # C-Plus-Plus Starter Project Using CMake
 
-<!--[![Build Status][build-shield]][build-url]-->
-[![CircleCI](https://circleci.com/gh/thiago-rezende/cmake-starter-project.svg?style=svg)](https://circleci.com/gh/thiago-rezende/cmake-starter-project)
-[![Build status](https://ci.appveyor.com/api/projects/status/oo46hf6k7cugb3wd?svg=true)](https://ci.appveyor.com/project/thiago-rezende/cmake-starter-project)
-[![MIT License][license-shield]][license-url]
-[![CMake 3.10.0][cmake-shield]][cmake-url]
-[![C++ 17][cpp-shield]][cpp-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-
-
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
@@ -67,13 +57,4 @@
  | LLVM     |       ✔️      |    ✔️        |   Not Tested  |
  | MSVC     |       ✔️      |    -------   |   ----------  |
 
-[build-shield]: https://img.shields.io/badge/build-passing-brightgreen.svg?style=flat-square
-[build-url]: #
-[license-shield]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
-[license-url]: https://opensource.org/licenses/MIT
-[cmake-shield]: https://img.shields.io/badge/CMake-3.10.0-blueviolet.svg?style=flat-square
 [cmake-url]: https://cmake.org/
-[cpp-shield]: https://img.shields.io/badge/C++-17-orange.svg?style=flat-square
-[cpp-url]: https://cmake.org/
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://www.linkedin.com/in/thiago-horus-rezende/
