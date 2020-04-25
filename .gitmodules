@@ -2,3 +2,7 @@
 	path = vendor/cmake-pch
 	url = https://github.com/larsch/cmake-precompiled-header.git
 	branch = master
+[submodule "vendor/cmake-lua"]
+	path = vendor/cmake-lua
+	url = https://gitlab.com/thiago-rezende/cmake-lua.git
+	branch = master
