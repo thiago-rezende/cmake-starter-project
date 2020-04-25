@@ -1,6 +1,10 @@
 # Minimun versior to run the script
 cmake_minimum_required(VERSION 3.1)
 
+# Global CMake Vars
+set(PRJ_NAME MyProject)
+set(EXE_NAME myapp)
+
 # Chicking version
 if(${CMAKE_VERSION} VERSION_LESS 3.12)
     cmake_policy(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
@@ -17,7 +21,12 @@ if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
 endif()
 
 # Setting up the project name and version
-project(MyProject VERSION 1.0.0)
+# project(${PRJ_NAME} VERSION 1.0.0)
+project(${PRJ_NAME}
+        VERSION 1.0.0.0
+        DESCRIPTION "Simple CMake Starter Project"
+        HOMEPAGE_URL "https://gitlab.com/thiago-rezende/cmake-starter-project"
+        LANGUAGES CXX C)
 
 # Setting the path to the vendor folder
 set(VENDOR ${CMAKE_SOURCE_DIR}/vendor)

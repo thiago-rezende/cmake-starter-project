@@ -8,17 +8,17 @@ set(MYAPP_SOURCES
 )
 
 # Setting the executable for the app
-add_executable(myapp ${MYAPP_SOURCES})
+add_executable(${EXE_NAME} ${MYAPP_SOURCES})
 # Setting the app properties for the app
-set_property(TARGET myapp PROPERTY CXX_STANDARD 17)
+set_property(TARGET ${EXE_NAME} PROPERTY CXX_STANDARD 17)
 
 ## Linking the third-party libs
 # Lua
-target_include_directories(myapp PUBLIC ${LUA_LIB_INCLUDE})
-target_link_libraries(myapp PUBLIC lua_static)
+target_include_directories(${EXE_NAME} PUBLIC ${LUA_LIB_INCLUDE})
+target_link_libraries(${EXE_NAME} PUBLIC lua_static)
 # Sol3
-target_include_directories(myapp PUBLIC ${VENDOR}/sol3/include)
-target_link_libraries(myapp INTERFACE sol2::sol2)
+target_include_directories(${EXE_NAME} PUBLIC ${VENDOR}/sol3/include)
+target_link_libraries(${EXE_NAME} INTERFACE sol2::sol2)
 
 # Setting custom commandos to copy all needed files to the right location
 add_custom_target(copy_resources ALL
@@ -27,7 +27,7 @@ add_custom_target(copy_resources ALL
     DEPENDS myapp)
 
 # Setting the install command to the app
-install(TARGETS myapp RUNTIME DESTINATION bin)
+install(TARGETS ${EXE_NAME} RUNTIME DESTINATION bin)
 
 # Precompiled deader setup
-add_precompiled_header(myapp pch.h pch.cpp)
+add_precompiled_header(${EXE_NAME} pch.h pch.cpp)
