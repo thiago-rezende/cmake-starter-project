@@ -6,3 +6,7 @@
 	path = vendor/cmake-lua
 	url = https://gitlab.com/thiago-rezende/cmake-lua.git
 	branch = master
+[submodule "vendor/sol3"]
+	path = vendor/sol3
+	url = https://github.com/thephd/sol2
+	branch = develop
