@@ -39,5 +39,8 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 # Stting the install prefix
 set(CMAKE_INSTALL_PREFIX ${CMAKE_SOURCE_DIR})
 
+# Adding the third-party subdirectories
+add_subdirectory(${VENDOR}/cmake-lua)
+
 # Adding the source folder
 add_subdirectory(src)

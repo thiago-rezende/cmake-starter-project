@@ -12,6 +12,11 @@ add_executable(myapp ${MYAPP_SOURCES})
 # Setting the app properties for the app
 set_property(TARGET myapp PROPERTY CXX_STANDARD 17)
 
+## Linking the third-party libs
+# Lua
+target_include_directories(myapp PUBLIC ${LUA_LIB_INCLUDE})
+target_link_libraries(myapp lua_static)
+
 # Setting custom commandos to copy all needed files to the right location
 add_custom_target(copy_resources ALL
     COMMAND cmake -E copy_directory ${CMAKE_SOURCE_DIR}/src/assets ${CMAKE_BINARY_DIR}/bin/assets
