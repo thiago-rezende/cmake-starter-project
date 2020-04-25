@@ -21,6 +21,11 @@
   </p>
 </div>
 
+ - Libraries Included
+   - [CMakePCH][cmake-pch-url]
+   - [CMake Lua][cmake-lua-url]
+   - [Sol3][sol3-url]
+
  - Project structure
  ```
     .
@@ -34,6 +39,8 @@
     |    └── CMakeLists.txt      # Project CMake build script.
     ├── vendor                   # Third-party packages will be here.
     |    └── cmake-pch           # CMake precompiled hearder tool.
+    |    └── cmake-lua           # CMake script to build lua.
+    |    └── sol3                # Sol3 Lib.
     └── CMakeLists.txt           # Main CMake build script.
 ```
  ### How to Use
@@ -58,5 +65,8 @@
  | MSVC     |       ✔️      |    -------   |   ----------  |
 
 [cmake-url]: https://cmake.org/
+[cmake-pch-url]: https://github.com/larsch/cmake-precompiled-header.git
+[cmake-lua-url]: https://gitlab.com/thiago-rezende/cmake-lua.git
+[sol3-url]: https://github.com/thephd/sol2
 
 ## Contributors ✨
