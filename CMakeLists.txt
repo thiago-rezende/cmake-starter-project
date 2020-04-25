@@ -1,5 +1,5 @@
 # Minimun versior to run the script
-cmake_minimum_required(VERSION 3.1...3.15)
+cmake_minimum_required(VERSION 3.1)
 
 # Chicking version
 if(${CMAKE_VERSION} VERSION_LESS 3.12)
