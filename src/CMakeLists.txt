@@ -1,5 +1,7 @@
 # Setting the sources for the app
 set(MYAPP_SOURCES
+    # Config File
+    "project_config.h"
     # Precompiled headers
     "pch.h"
     "pch.cpp"

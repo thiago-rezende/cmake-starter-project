@@ -48,6 +48,9 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 # Stting the install prefix
 set(CMAKE_INSTALL_PREFIX ${CMAKE_SOURCE_DIR})
 
+# Configure the project_config.h
+configure_file(${CMAKE_SOURCE_DIR}/src/project_config.h.in ${CMAKE_SOURCE_DIR}/src/project_config.h)
+
 ## Adding the third-party subdirectories
 # Lua
 add_subdirectory(${VENDOR}/cmake-lua)
