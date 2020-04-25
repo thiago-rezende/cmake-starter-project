@@ -15,7 +15,10 @@ set_property(TARGET myapp PROPERTY CXX_STANDARD 17)
 ## Linking the third-party libs
 # Lua
 target_include_directories(myapp PUBLIC ${LUA_LIB_INCLUDE})
-target_link_libraries(myapp lua_static)
+target_link_libraries(myapp PUBLIC lua_static)
+# Sol3
+target_include_directories(myapp PUBLIC ${VENDOR}/sol3/include)
+target_link_libraries(myapp INTERFACE sol2::sol2)
 
 # Setting custom commandos to copy all needed files to the right location
 add_custom_target(copy_resources ALL
