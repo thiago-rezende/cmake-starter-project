@@ -5,14 +5,18 @@ set(MYAPP_SOURCES
     # Precompiled headers
     "pch.h"
     "pch.cpp"
+    # Logging System
+    "log/HorusLog.cpp"
+    "log/HorusLog.h"
     # Main application
-    "main.cpp"
-)
+    "main.cpp")
 
 # Setting the executable for the app
 add_executable(${EXE_NAME} ${MYAPP_SOURCES})
 # Setting the app properties for the app
 set_property(TARGET ${EXE_NAME} PROPERTY CXX_STANDARD 17)
+# Setting the logger variable
+target_compile_definitions(${EXE_NAME} PRIVATE -DH_DEBUG)
 
 ## Linking the third-party libs
 # Lua
