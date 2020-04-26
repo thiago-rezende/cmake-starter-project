@@ -1,3 +1,5 @@
+#pragma once
+
 #define PROJECT_NAME "MyProject"
 
 #define MyProject_VERSION_MAJOR 1
