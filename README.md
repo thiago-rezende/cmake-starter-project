@@ -25,6 +25,7 @@
    - [CMakePCH][cmake-pch-url]
    - [CMake Lua][cmake-lua-url]
    - [Sol3][sol3-url]
+   - [Spdlog][spdlog-url]
 
  - Project structure
  ```
@@ -41,6 +42,7 @@
     |    └── cmake-pch           # CMake precompiled hearder tool.
     |    └── cmake-lua           # CMake script to build lua.
     |    └── sol3                # Sol3 Lib.
+    |    └── spdlog              # Fast C++ logging library.
     └── CMakeLists.txt           # Main CMake build script.
 ```
  ### How to Use
@@ -68,6 +70,7 @@
 [cmake-pch-url]: https://github.com/larsch/cmake-precompiled-header.git
 [cmake-lua-url]: https://gitlab.com/thiago-rezende/cmake-lua.git
 [sol3-url]: https://github.com/thephd/sol2
+[spdlog-url]: https://github.com/gabime/spdlog
 
 ## Contributors ✨
 

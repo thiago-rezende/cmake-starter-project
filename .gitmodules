@@ -10,3 +10,7 @@
 	path = vendor/sol3
 	url = https://github.com/thephd/sol2
 	branch = develop
+[submodule "vendor/spdlog"]
+	path = vendor/spdlog
+	url = https://github.com/gabime/spdlog
+	branch = v1.x
