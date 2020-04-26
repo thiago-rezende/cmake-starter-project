@@ -21,6 +21,9 @@ target_link_libraries(${EXE_NAME} PUBLIC lua_static)
 # Sol3
 target_include_directories(${EXE_NAME} PUBLIC ${VENDOR}/sol3/include)
 target_link_libraries(${EXE_NAME} INTERFACE sol2::sol2)
+# Spdlog
+target_include_directories(${EXE_NAME} PUBLIC ${VENDOR}/spdlog/include)
+target_link_libraries(${EXE_NAME} PUBLIC spdlog::spdlog)
 
 # Setting custom commandos to copy all needed files to the right location
 add_custom_target(copy_resources ALL

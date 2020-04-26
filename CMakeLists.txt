@@ -56,6 +56,8 @@ configure_file(${CMAKE_SOURCE_DIR}/src/project_config.h.in ${CMAKE_SOURCE_DIR}/s
 add_subdirectory(${VENDOR}/cmake-lua)
 # Sol3
 add_subdirectory(${VENDOR}/sol3)
+# Spdlog
+add_subdirectory(${VENDOR}/spdlog)
 
 # Adding the source folder
 add_subdirectory(src)
