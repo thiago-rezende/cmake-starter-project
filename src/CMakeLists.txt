@@ -17,6 +17,8 @@ add_executable(${EXE_NAME} ${MYAPP_SOURCES})
 set_property(TARGET ${EXE_NAME} PROPERTY CXX_STANDARD 17)
 # Setting the logger variable
 target_compile_definitions(${EXE_NAME} PRIVATE -DH_DEBUG)
+# Setting the src default include dir
+target_include_directories(${EXE_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/src)
 
 ## Linking the third-party libs
 # Lua
