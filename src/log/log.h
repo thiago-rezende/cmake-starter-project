@@ -4,7 +4,7 @@
 #include <spdlog/fmt/ostr.h>
 #include <spdlog/sinks/stdout_color_sinks.h>
 
-namespace horus
+namespace Horus
 {
     class Log
     {
@@ -19,11 +19,11 @@ namespace horus
 }
 
 #ifdef H_DEBUG
-#define H_TRACE(...) ::horus::Log::getLogger()->trace(__VA_ARGS__)
-#define H_INFO(...) ::horus::Log::getLogger()->info(__VA_ARGS__)
-#define H_WARN(...) ::horus::Log::getLogger()->warn(__VA_ARGS__)
-#define H_ERROR(...) ::horus::Log::getLogger()->error(__VA_ARGS__)
-#define H_CRITICAL(...) ::horus::Log::getLogger()->critical(__VA_ARGS__)
+#define H_TRACE(...) ::Horus::Log::getLogger()->trace(__VA_ARGS__)
+#define H_INFO(...) ::Horus::Log::getLogger()->info(__VA_ARGS__)
+#define H_WARN(...) ::Horus::Log::getLogger()->warn(__VA_ARGS__)
+#define H_ERROR(...) ::Horus::Log::getLogger()->error(__VA_ARGS__)
+#define H_CRITICAL(...) ::Horus::Log::getLogger()->critical(__VA_ARGS__)
 #else
 #define H_TRACE(...)
 #define H_INFO(...)
