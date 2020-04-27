@@ -1,11 +1,11 @@
 #include "pch.h"
 #include "project_config.h"
-#include "log/HorusLog.h"
+#include "log/log.h"
 
 int main(int argc, char **argv)
 {
-    // Initialize Horus Logger
-    horus::Log::init();
+    // Initialize the Logger
+    Horus::Log::init();
 
     H_INFO("CMake Starter Project!");
     H_INFO("PROJECT_NAME: {}", PROJECT_NAME);

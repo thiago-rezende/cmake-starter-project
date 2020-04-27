@@ -6,8 +6,8 @@ set(MYAPP_SOURCES
     "pch.h"
     "pch.cpp"
     # Logging System
-    "log/HorusLog.cpp"
-    "log/HorusLog.h"
+    "log/log.cpp"
+    "log/log.h"
     # Main application
     "main.cpp")
 
