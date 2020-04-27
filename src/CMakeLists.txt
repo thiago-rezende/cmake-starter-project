@@ -1,5 +1,5 @@
 # Setting the sources for the app
-set(MYAPP_SOURCES
+set(APPLICATION_SOURCES
     # Config File
     "project_config.h"
     # Precompiled headers
@@ -12,7 +12,7 @@ set(MYAPP_SOURCES
     "main.cpp")
 
 # Setting the executable for the app
-add_executable(${EXE_NAME} ${MYAPP_SOURCES})
+add_executable(${EXE_NAME} ${APPLICATION_SOURCES})
 # Setting the app properties for the app
 set_property(TARGET ${EXE_NAME} PROPERTY CXX_STANDARD 17)
 # Setting the logger variable
@@ -35,7 +35,7 @@ target_link_libraries(${EXE_NAME} PUBLIC spdlog::spdlog)
 add_custom_target(copy_resources ALL
     COMMAND cmake -E copy_directory ${CMAKE_SOURCE_DIR}/src/assets ${CMAKE_BINARY_DIR}/bin/assets
     COMMAND cmake -E copy_directory ${CMAKE_SOURCE_DIR}/src/assets ${CMAKE_SOURCE_DIR}/bin/assets
-    DEPENDS myapp)
+    DEPENDS ${EXE_NAME})
 
 # Setting the install command to the app
 install(TARGETS ${EXE_NAME} RUNTIME DESTINATION bin)
