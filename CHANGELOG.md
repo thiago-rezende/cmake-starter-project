@@ -4,6 +4,13 @@
 
 ## [Current]
 
+
+
+## [v1.0.0]
+ - [0110ba9] fix(CMake): force precompiled headers inclusion (Thiago Rezende)
+ - [bc4d29f] feat(CMake): added glfw and opengl (Thiago Rezende)
+ - [12dd031] fix(CMake): added the new vendor directories (Thiago Rezende)
+ - [c257e8e] docs(changelog): generated new changelog (Thiago Rezende)
  - [653439a] chore(git): changed the submodules names (Thiago Rezende)
  - [f73d520] chore(vendor): changed the structure of the vendor folder (Thiago Rezende)
  - [1b3c98b] docs(changelog): added a changelog generator (Thiago Rezende)
@@ -118,3 +125,4 @@
  - [88a1162] Update README.md (Thiago Rezende)
  - [b6bf1ff] Initial commit (thiago-rezende)
  - [6b225eb] Initial commit (Thiago Rezende)
+
