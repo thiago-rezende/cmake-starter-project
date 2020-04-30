@@ -21,9 +21,8 @@ if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
 endif()
 
 # Setting up the project name and version
-# project(${PRJ_NAME} VERSION 1.0.0)
 project(${PRJ_NAME}
-        VERSION 1.0.0.0
+        VERSION 1.0.1.0
         DESCRIPTION "Simple CMake Starter Project"
         HOMEPAGE_URL "https://gitlab.com/thiago-rezende/cmake-starter-project"
         LANGUAGES CXX C)
