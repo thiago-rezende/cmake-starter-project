@@ -25,10 +25,10 @@ target_include_directories(${EXE_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/src)
 target_include_directories(${EXE_NAME} PUBLIC ${LUA_LIB_INCLUDE})
 target_link_libraries(${EXE_NAME} PUBLIC lua_static)
 # Sol3
-target_include_directories(${EXE_NAME} PUBLIC ${VENDOR}/sol3/include)
+target_include_directories(${EXE_NAME} PUBLIC ${VENDOR}/scripting/sol3/include)
 target_link_libraries(${EXE_NAME} INTERFACE sol2::sol2)
 # Spdlog
-target_include_directories(${EXE_NAME} PUBLIC ${VENDOR}/spdlog/include)
+target_include_directories(${EXE_NAME} PUBLIC ${VENDOR}/utils/spdlog/include)
 target_link_libraries(${EXE_NAME} PUBLIC spdlog::spdlog)
 
 # Setting custom commandos to copy all needed files to the right location

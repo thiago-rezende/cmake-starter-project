@@ -32,7 +32,7 @@ project(${PRJ_NAME}
 set(VENDOR ${CMAKE_SOURCE_DIR}/vendor)
 
 # Setting CMake module path
-list(APPEND CMAKE_MODULE_PATH ${VENDOR}/cmake-pch)
+list(APPEND CMAKE_MODULE_PATH ${VENDOR}/utils/cmake-pch)
 
 # Loading CMake pch module
 include(PrecompiledHeader)
@@ -53,11 +53,11 @@ configure_file(${CMAKE_SOURCE_DIR}/src/project_config.h.in ${CMAKE_SOURCE_DIR}/s
 
 ## Adding the third-party subdirectories
 # Lua
-add_subdirectory(${VENDOR}/cmake-lua)
+add_subdirectory(${VENDOR}/scripting/cmake-lua)
 # Sol3
-add_subdirectory(${VENDOR}/sol3)
+add_subdirectory(${VENDOR}/scripting/sol3)
 # Spdlog
-add_subdirectory(${VENDOR}/spdlog)
+add_subdirectory(${VENDOR}/utils/spdlog)
 
 # Adding the source folder
 add_subdirectory(src)
