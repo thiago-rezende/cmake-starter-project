@@ -4,20 +4,20 @@
 # see https://hub.docker.com/_/gcc/
 image: gcc:latest
 
+default:
+  before_script:
+    - apt update && apt -y install cmake libgl1-mesa-dev libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev ninja-build
+
 # setting env variables
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
 
 build:
   stage: build
-  # instead of calling g++ directly you can also use some build toolkit like make
-  # install the necessary build tools when needed
-  before_script:
-    - apt update && apt -y install cmake
   script:
     - mkdir build && cd build
-    - cmake ..
-    - make && make install
+    - cmake .. -G"Ninja" -DOpenGL_GL_PREFERENCE=GLVND
+    - ninja && ninja install
     - cd ..
   artifacts:
     paths:
