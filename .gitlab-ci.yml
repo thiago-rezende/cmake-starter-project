@@ -21,11 +21,12 @@ build:
     - cd ..
   artifacts:
     paths:
-      - bin/
+      - bin
 
 # depending on your build setup it's most likely a good idea to cache outputs to reduce the build time
 cache:
   paths:
+    - bin/
     - vendor/
 
 # run tests using the binary built before
