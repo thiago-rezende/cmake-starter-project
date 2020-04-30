@@ -49,4 +49,4 @@ add_custom_target(copy_resources ALL
 install(TARGETS ${EXE_NAME} RUNTIME DESTINATION bin)
 
 # Precompiled deader setup
-add_precompiled_header(${EXE_NAME} pch.h pch.cpp)
+add_precompiled_header(${EXE_NAME} pch.h pch.cpp FORCEINCLUDE)
