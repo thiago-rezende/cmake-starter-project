@@ -13,10 +13,10 @@ build:
   # instead of calling g++ directly you can also use some build toolkit like make
   # install the necessary build tools when needed
   before_script:
-    - apt update && apt -y install cmake
+    - apt update && apt -y install cmake libgl1-mesa-dev libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev ninja-build
   script:
     - mkdir build && cd build
-    - cmake ..
+    - cmake .. -G"Ninja" -DOpenGL_GL_PREFERENCE=GLVDN
     - make && make install
     - cd ..
   artifacts:
