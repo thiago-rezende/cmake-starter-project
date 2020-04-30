@@ -20,16 +20,24 @@ target_compile_definitions(${EXE_NAME} PRIVATE -DH_DEBUG)
 # Setting the src default include dir
 target_include_directories(${EXE_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/src)
 
-## Linking the third-party libs
+### Linking the third-party libs
+## Scripting
 # Lua
 target_include_directories(${EXE_NAME} PUBLIC ${LUA_LIB_INCLUDE})
 target_link_libraries(${EXE_NAME} PUBLIC lua_static)
 # Sol3
 target_include_directories(${EXE_NAME} PUBLIC ${VENDOR}/scripting/sol3/include)
 target_link_libraries(${EXE_NAME} INTERFACE sol2::sol2)
+## Utils
 # Spdlog
 target_include_directories(${EXE_NAME} PUBLIC ${VENDOR}/utils/spdlog/include)
 target_link_libraries(${EXE_NAME} PUBLIC spdlog::spdlog)
+## Graphics
+# OpenGL
+target_link_libraries(${EXE_NAME} PUBLIC OpenGL::GL)
+# GLFW
+target_include_directories(${EXE_NAME} PUBLIC ${VENDOR}/graphics/glfw/include)
+target_link_libraries(${EXE_NAME} PUBLIC glfw)
 
 # Setting custom commandos to copy all needed files to the right location
 add_custom_target(copy_resources ALL

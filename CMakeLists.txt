@@ -51,13 +51,26 @@ set(CMAKE_INSTALL_PREFIX ${CMAKE_SOURCE_DIR})
 # Configure the project_config.h
 configure_file(${CMAKE_SOURCE_DIR}/src/project_config.h.in ${CMAKE_SOURCE_DIR}/src/project_config.h)
 
-## Adding the third-party subdirectories
+### Adding the third-party subdirectories
+## Scripting
 # Lua
 add_subdirectory(${VENDOR}/scripting/cmake-lua)
 # Sol3
+## Utils
 add_subdirectory(${VENDOR}/scripting/sol3)
 # Spdlog
 add_subdirectory(${VENDOR}/utils/spdlog)
+## Graphics
+# OpenGL
+find_package(OpenGL REQUIRED)
+# GLFW
+set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
+set(GLFW_INSTALL OFF CACHE BOOL "" FORCE)
+set(GLFW_VULKAN_STATIC OFF CACHE BOOL "" FORCE)
+set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
+set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
+set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
+add_subdirectory(${VENDOR}/graphics/glfw)
 
 # Adding the source folder
 add_subdirectory(src)

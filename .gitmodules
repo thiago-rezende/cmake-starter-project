@@ -14,3 +14,7 @@
 	path = vendor/utils/spdlog
 	url = https://github.com/gabime/spdlog
 	branch = v1.x
+[submodule "vendor/graphics/glfw"]
+	path = vendor/graphics/glfw
+	url = https://github.com/glfw/glfw.git
+	branch = master
