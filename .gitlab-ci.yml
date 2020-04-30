@@ -16,7 +16,7 @@ build:
     - apt update && apt -y install cmake libgl1-mesa-dev libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev ninja-build
   script:
     - mkdir build && cd build
-    - cmake .. -G"Ninja" -DOpenGL_GL_PREFERENCE=GLVDN
+    - cmake .. -G"Ninja" -DOpenGL_GL_PREFERENCE=GLVND
     - make && make install
     - cd ..
   artifacts:
