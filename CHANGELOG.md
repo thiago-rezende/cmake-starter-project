@@ -4,6 +4,9 @@
 
 ## [Current]
 
+ - [653439a] chore(git): changed the submodules names (Thiago Rezende)
+ - [f73d520] chore(vendor): changed the structure of the vendor folder (Thiago Rezende)
+ - [1b3c98b] docs(changelog): added a changelog generator (Thiago Rezende)
  - [8875fb3] fix(CMake): fixed worng dependency to the copy_resources target (Thiago Rezende)
  - [bf97d53] feat(CMake): added the base src folder in the include dirs (Thiago Rezende)
  - [0ee5f3d] refactor(log): changed the file name and the namespace (Thiago Rezende)
