@@ -1,5 +1,5 @@
 # C-Plus-Plus Starter Project Using CMake
-
+![build-status-badge] ![license-badge] ![cpp-badge] ![cmake-badge]
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -8,7 +8,6 @@
   </a>
 
   <h3 align="center">CMake Starter Project</h3>
-
   <p align="center">
     A Simple C++ Starter Project Using CMake
     <br />
@@ -68,12 +67,17 @@
 
  - Compatibility
 
- | Toolset  |    Windows    |     Linux     |     MacOS     |
- |:--------:|:-------------:|:-------------:|:-------------:|
- | GCC      |       ✔️      |    ✔️        |   Not Tested  |
- | LLVM     |       ✔️      |    ✔️        |   Not Tested  |
- | MSVC     |       ✔️      |    -------   |   ----------  |
+ | Toolset | Windows |  Linux  |   MacOS    |
+ | :-----: | :-----: | :-----: | :--------: |
+ |   GCC   |    ✔️    |    ✔️    | Not Tested |
+ |  LLVM   |    ✔️    |    ✔️    | Not Tested |
+ |  MSVC   |    ✔️    | ------- | ---------- |
 
+## Contributors ✨
+
+[![](https://sourcerer.io/fame/thiago-rezende/thiago-rezende/cmake-starter-project/images/0)](https://sourcerer.io/fame/thiago-rezende/thiago-rezende/cmake-starter-project/links/0)[![](https://sourcerer.io/fame/thiago-rezende/thiago-rezende/cmake-starter-project/images/1)](https://sourcerer.io/fame/thiago-rezende/thiago-rezende/cmake-starter-project/links/1)[![](https://sourcerer.io/fame/thiago-rezende/thiago-rezende/cmake-starter-project/images/2)](https://sourcerer.io/fame/thiago-rezende/thiago-rezende/cmake-starter-project/links/2)[![](https://sourcerer.io/fame/thiago-rezende/thiago-rezende/cmake-starter-project/images/3)](https://sourcerer.io/fame/thiago-rezende/thiago-rezende/cmake-starter-project/links/3)[![](https://sourcerer.io/fame/thiago-rezende/thiago-rezende/cmake-starter-project/images/4)](https://sourcerer.io/fame/thiago-rezende/thiago-rezende/cmake-starter-project/links/4)[![](https://sourcerer.io/fame/thiago-rezende/thiago-rezende/cmake-starter-project/images/5)](https://sourcerer.io/fame/thiago-rezende/thiago-rezende/cmake-starter-project/links/5)[![](https://sourcerer.io/fame/thiago-rezende/thiago-rezende/cmake-starter-project/images/6)](https://sourcerer.io/fame/thiago-rezende/thiago-rezende/cmake-starter-project/links/6)[![](https://sourcerer.io/fame/thiago-rezende/thiago-rezende/cmake-starter-project/images/7)](https://sourcerer.io/fame/thiago-rezende/thiago-rezende/cmake-starter-project/links/7)
+
+<!-- Links -->
 [cmake-url]: https://cmake.org/
 [cmake-pch-url]: https://github.com/larsch/cmake-precompiled-header.git
 [cmake-lua-url]: https://gitlab.com/thiago-rezende/cmake-lua.git
@@ -81,6 +85,8 @@
 [spdlog-url]: https://github.com/gabime/spdlog
 [glfw-url]: https://github.com/glfw/glfw
 
-## Contributors ✨
-
-[![](https://sourcerer.io/fame/thiago-rezende/thiago-rezende/cmake-starter-project/images/0)](https://sourcerer.io/fame/thiago-rezende/thiago-rezende/cmake-starter-project/links/0)[![](https://sourcerer.io/fame/thiago-rezende/thiago-rezende/cmake-starter-project/images/1)](https://sourcerer.io/fame/thiago-rezende/thiago-rezende/cmake-starter-project/links/1)[![](https://sourcerer.io/fame/thiago-rezende/thiago-rezende/cmake-starter-project/images/2)](https://sourcerer.io/fame/thiago-rezende/thiago-rezende/cmake-starter-project/links/2)[![](https://sourcerer.io/fame/thiago-rezende/thiago-rezende/cmake-starter-project/images/3)](https://sourcerer.io/fame/thiago-rezende/thiago-rezende/cmake-starter-project/links/3)[![](https://sourcerer.io/fame/thiago-rezende/thiago-rezende/cmake-starter-project/images/4)](https://sourcerer.io/fame/thiago-rezende/thiago-rezende/cmake-starter-project/links/4)[![](https://sourcerer.io/fame/thiago-rezende/thiago-rezende/cmake-starter-project/images/5)](https://sourcerer.io/fame/thiago-rezende/thiago-rezende/cmake-starter-project/links/5)[![](https://sourcerer.io/fame/thiago-rezende/thiago-rezende/cmake-starter-project/images/6)](https://sourcerer.io/fame/thiago-rezende/thiago-rezende/cmake-starter-project/links/6)[![](https://sourcerer.io/fame/thiago-rezende/thiago-rezende/cmake-starter-project/images/7)](https://sourcerer.io/fame/thiago-rezende/thiago-rezende/cmake-starter-project/links/7)
+<!-- Badges -->
+[license-badge]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
+[cmake-badge]: https://img.shields.io/badge/CMake-3.10.0-blueviolet.svg?style=flat-square
+[cpp-badge]: https://img.shields.io/badge/C++-17-orange.svg?style=flat-square
+[build-status-badge]: https://img.shields.io/gitlab/pipeline/thiago-rezende/cmake-starter-project/master?style=flat-square
