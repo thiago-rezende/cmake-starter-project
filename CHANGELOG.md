@@ -2,9 +2,9 @@
 > This changelog is automaticaly generated.
 > If you find any issue with this file, please report to the devs.
 
-## [Current]
+## [Unreleased]
 
-
+ - [ce92094] docs(changelog): generated new changelog (Thiago Rezende)
 
 ## [v1.0.1]
  - [750366a] docs(changelog): generated new changelog (Thiago Rezende)
