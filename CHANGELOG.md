@@ -2,9 +2,27 @@
 > This changelog is automaticaly generated.
 > If you find any issue with this file, please report to the devs.
 
-## [Current]
+## [Unreleased]
 
 
+## [v1.0.2]
+ - [bf25855] fix(CMake): fiexd spelling check erro within the main CMakeLists file (Thiago Rezende)
+ - [185a689] docs(CMake): updated the version info (Thiago Rezende)
+ - [b6b7306] docs: added some info badges to the readme file (Thiago Rezende)
+ - [d24ef16] feat(CMake): changed the cmake minimum version required (Thiago Rezende)
+ - [020bd6d] docs: added the new folder structure and the glfw link to the readme (Thiago Rezende)
+ - [b597161] refactor(changelog): fixed redundance in changelog generator script (Thiago Rezende)
+ - [ce92094] docs(changelog): generated new changelog (Thiago Rezende)
+
+## [v1.0.1]
+ - [750366a] docs(changelog): generated new changelog (Thiago Rezende)
+ - [04b3c5b] docs(CMake): updated the version info (Thiago Rezende)
+ - [d5627fa] ci: added a global before_script (Thiago Rezende)
+ - [5814cb1] ci: changed the build system from make to ninja (Thiago Rezende)
+ - [5d8615d] ci: added caching to the bin folder (Thiago Rezende)
+ - [646f0a8] ci: fixed wrong value to OpenGL_GL_PREFERENCE (Thiago Rezende)
+ - [c57e125] ci: added glfw dependencies to the ci environment (Thiago Rezende)
+ - [7f24020] docs(changelog): generated new changelog (Thiago Rezende)
 
 ## [v1.0.0]
  - [0110ba9] fix(CMake): force precompiled headers inclusion (Thiago Rezende)

@@ -1,11 +1,11 @@
 # Minimun versior to run the script
-cmake_minimum_required(VERSION 3.1)
+cmake_minimum_required(VERSION 3.10.0)
 
 # Global CMake Vars
 set(PRJ_NAME MyProject)
 set(EXE_NAME myapp)
 
-# Chicking version
+# Checking version
 if(${CMAKE_VERSION} VERSION_LESS 3.12)
     cmake_policy(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
 endif()
@@ -23,7 +23,7 @@ endif()
 # Setting up the project name and version
 # project(${PRJ_NAME} VERSION 1.0.0)
 project(${PRJ_NAME}
-        VERSION 1.0.0.0
+        VERSION 1.0.2.0
         DESCRIPTION "Simple CMake Starter Project"
         HOMEPAGE_URL "https://gitlab.com/thiago-rezende/cmake-starter-project"
         LANGUAGES CXX C)
