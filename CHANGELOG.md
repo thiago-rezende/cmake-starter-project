@@ -4,6 +4,13 @@
 
 ## [Unreleased]
 
+
+## [v1.0.2]
+ - [bf25855] fix(CMake): fiexd spelling check erro within the main CMakeLists file (Thiago Rezende)
+ - [185a689] docs(CMake): updated the version info (Thiago Rezende)
+ - [b6b7306] docs: added some info badges to the readme file (Thiago Rezende)
+ - [d24ef16] feat(CMake): changed the cmake minimum version required (Thiago Rezende)
+ - [020bd6d] docs: added the new folder structure and the glfw link to the readme (Thiago Rezende)
  - [b597161] refactor(changelog): fixed redundance in changelog generator script (Thiago Rezende)
  - [ce92094] docs(changelog): generated new changelog (Thiago Rezende)
 
