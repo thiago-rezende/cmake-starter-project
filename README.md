@@ -14,9 +14,9 @@
     <a href="#how-to-use"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/thiago-rezende/cmake-starter-project/issues">Report Bug</a>
+    <a href="https://gitlab.com/thiago-rezende/cmake-starter-project/issues">Report Bug</a>
     ·
-    <a href="https://github.com/thiago-rezende/cmake-starter-project/issues">Request Feature</a>
+    <a href="https://gitlab.com/thiago-rezende/cmake-starter-project/issues">Request Feature</a>
   </p>
 </div>
 
@@ -33,13 +33,13 @@
  - Project structure
  ```
     .
-    ├── .github                  # Repository stuff.
+    ├── .gitlab                  # Repository stuff.
     ├── bin                      # Binaries will be here.
     ├── src                      # Source folder.
     |    ├── assets              # Assets folder.
     |    ├── main.cpp            # Application entry point.
     |    ├── pch.h               # Precompiled header file.
-    |    ├── pch.cpp             # Procompiled deader source file.
+    |    ├── pch.cpp             # Procompiled header source file.
     |    └── CMakeLists.txt      # Project CMake build script.
     ├── vendor                   # Third-party packages will be here.
     |    ├── utils
