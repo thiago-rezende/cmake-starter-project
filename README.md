@@ -22,10 +22,14 @@
 </div>
 
  - Libraries Included
-   - [CMakePCH][cmake-pch-url]
-   - [CMake Lua][cmake-lua-url]
-   - [Sol3][sol3-url]
-   - [Spdlog][spdlog-url]
+   - Utils
+     - [CMakePCH][cmake-pch-url]
+     - [Spdlog][spdlog-url]
+   - Scripting
+     - [CMake Lua][cmake-lua-url]
+   	 - [Sol3][sol3-url]
+   - Graphics
+     - [GLFW][glfw-url]
 
  - Project structure
  ```
@@ -39,10 +43,14 @@
     |    ├── pch.cpp             # Procompiled deader source file.
     |    └── CMakeLists.txt      # Project CMake build script.
     ├── vendor                   # Third-party packages will be here.
-    |    └── cmake-pch           # CMake precompiled hearder tool.
-    |    └── cmake-lua           # CMake script to build lua.
-    |    └── sol3                # Sol3 Lib.
-    |    └── spdlog              # Fast C++ logging library.
+    |    ├── utils
+    |    |   └── cmake-pch       # CMake precompiled hearder tool.
+    |    |   └── spdlog          # Fast C++ logging library.
+    |    ├── scripting
+    |    |   └── cmake-lua       # CMake script to build lua.
+    |    |   └── sol3            # A fast and simple C++ Lua Binding.
+    |    └── graphics
+    |        └── glfw            # Library for OpenGL, OpenGL ES and Vulkan development.
     └── CMakeLists.txt           # Main CMake build script.
 ```
  ### How to Use
@@ -71,6 +79,7 @@
 [cmake-lua-url]: https://gitlab.com/thiago-rezende/cmake-lua.git
 [sol3-url]: https://github.com/thephd/sol2
 [spdlog-url]: https://github.com/gabime/spdlog
+[glfw-url]: https://github.com/glfw/glfw
 
 ## Contributors ✨
 

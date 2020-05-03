@@ -4,6 +4,7 @@
 
 ## [Unreleased]
 
+ - [b597161] refactor(changelog): fixed redundance in changelog generator script (Thiago Rezende)
  - [ce92094] docs(changelog): generated new changelog (Thiago Rezende)
 
 ## [v1.0.1]
