@@ -1,5 +1,5 @@
 # Minimun versior to run the script
-cmake_minimum_required(VERSION 3.1)
+cmake_minimum_required(VERSION 3.10.0)
 
 # Global CMake Vars
 set(PRJ_NAME MyProject)
