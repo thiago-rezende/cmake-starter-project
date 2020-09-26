@@ -1,20 +1,4 @@
-[submodule "vendor/utils/cmake-pch"]
-	path = vendor/utils/cmake-pch
-	url = https://github.com/larsch/cmake-precompiled-header.git
-	branch = master
-[submodule "vendor/scripting/cmake-lua"]
-	path = vendor/scripting/cmake-lua
-	url = https://gitlab.com/thiago-rezende/cmake-lua.git
-	branch = master
-[submodule "vendor/scripting/sol3"]
-	path = vendor/scripting/sol3
-	url = https://github.com/thephd/sol2
-	branch = develop
 [submodule "vendor/utils/spdlog"]
 	path = vendor/utils/spdlog
 	url = https://github.com/gabime/spdlog
 	branch = v1.x
-[submodule "vendor/graphics/glfw"]
-	path = vendor/graphics/glfw
-	url = https://github.com/glfw/glfw.git
-	branch = master
