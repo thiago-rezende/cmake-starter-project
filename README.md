@@ -26,10 +26,11 @@
     ├── .github                  # Repository stuff.
     ├── application              # Application folder.
     |    ├── assets              # Assets folder.
-    |    ├── include             # Headers folder.
-    |    |    └── pch.h          # Precompiled header file.
-    |    ├── source              # Sources folder.
-    |    |    └── main.cpp       # Application entry point.
+    |    ├── core                # Core functionalities folder.
+    |    |    └── logger.h       # Logger utils.
+    |    |    └── logger.cpp     # Logger utils implementation.
+    |    ├── pch.h               # Pre-compiled header.
+    |    ├── main.cpp            # Application entrypoint.
     |    └── CMakeLists.txt      # Application CMake build script.
     ├── vendor                   # Third-party packages will be here.
     |    └── spdlog              # Fast C++ logging library.
