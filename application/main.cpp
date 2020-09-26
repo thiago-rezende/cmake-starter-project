@@ -1,10 +1,15 @@
 #include <application/pch.h>
 #include <application/core/logger.h>
+#include <config.h>
 
 int main()
 {
     /* Initialize Logger */
     Horus::Logger::Init();
+
+    /* CMake Configured File Defines */
+    H_INFO("PROJECT NAME => {}", PROJECT_NAME);
+    H_INFO("PROJECT VERSION => {}", PROJECT_VERSION);
 
     /* Some Log Utils */
     H_TRACE("CMake Starter Project!");
