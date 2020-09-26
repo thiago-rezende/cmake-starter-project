@@ -1,5 +1,5 @@
 # C-Plus-Plus Starter Project Using CMake
-![license-badge] ![cpp-badge] ![cmake-badge]
+![build-status-badge] ![license-badge] ![cpp-badge] ![cmake-badge]
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -40,8 +40,8 @@
 
  | Toolset | Windows |  Linux  |   MacOS    |
  | :-----: | :-----: | :-----: | :--------: |
- |   GCC   |    ✔️    |    ✔️    | Not Tested |
- |  Clang   |    ✔️    |    ✔️    | Not Tested |
+ |   GCC   |    ✔️    |    ✔️    |    ✔️    |
+ |  Clang   |    ✔️    |    ✔️    |    ✔️    |
  |  MSVC   |    ✔️    | ------- | ---------- |
 
 <!-- Links -->
@@ -49,6 +49,7 @@
 [spdlog-url]: https://github.com/gabime/spdlog
 
 <!-- Badges -->
+[build-status-badge]: https://github.com/thiago-rezende/cmake-starter-project/workflows/build/badge.svg
 [license-badge]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
 [cmake-badge]: https://img.shields.io/badge/CMake-3.16.0-blueviolet.svg?style=flat-square
 [cpp-badge]: https://img.shields.io/badge/C++-17-orange.svg?style=flat-square
