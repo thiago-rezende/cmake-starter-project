@@ -10,6 +10,8 @@ int main()
     /* CMake Configured File Defines */
     H_INFO("PROJECT NAME => {}", PROJECT_NAME);
     H_INFO("PROJECT VERSION => {}", PROJECT_VERSION);
+    H_INFO("PROJECT DESCRIPTION => {}", PROJECT_DESCRIPTION);
+    H_INFO("PROJECT URL => {}", PROJECT_HOMEPAGE_URL);
 
     /* Some Log Utils */
     H_TRACE("CMake Starter Project!");

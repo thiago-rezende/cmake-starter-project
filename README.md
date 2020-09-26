@@ -14,6 +14,8 @@
     <a href="https://github.com/thiago-rezende/cmake-starter-project/issues">Report Bug</a>
     ·
     <a href="https://github.com/thiago-rezende/cmake-starter-project/issues">Request Feature</a>
+    .
+    <a href="https://github.com/thiago-rezende/cmake-starter-project/actions">Continuous Integration</a>
   </p>
 </div>
 
