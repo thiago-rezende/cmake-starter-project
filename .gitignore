@@ -4,10 +4,8 @@
 
 ### Build ###
 bin/
+lib/
 build/
-
-### all-contributors ###
-node_modules
 
 ### CMake ###
 CMakeLists.txt.user
@@ -78,11 +76,6 @@ Temporary Items
 
 ### VisualStudioCode ###
 .vscode/
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
 
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
