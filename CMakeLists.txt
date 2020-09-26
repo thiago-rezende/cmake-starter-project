@@ -1,16 +1,8 @@
-# Minimun versior to run the script
-cmake_minimum_required(VERSION 3.10.0)
+# Minimum version to run the script
+cmake_minimum_required(VERSION 3.16.0)
 
-# Global CMake Vars
-set(PRJ_NAME MyProject)
-set(EXE_NAME myapp)
-
-# Checking version
-if(${CMAKE_VERSION} VERSION_LESS 3.12)
-    cmake_policy(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
-endif()
-
-set(default_build_type "Release")
+# Setting build type
+set(default_build_type "Debug")
 if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
   message(STATUS "Setting build type to '${default_build_type}' as none was specified.")
   set(CMAKE_BUILD_TYPE "${default_build_type}" CACHE
@@ -21,56 +13,45 @@ if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
 endif()
 
 # Setting up the project name and version
-# project(${PRJ_NAME} VERSION 1.0.0)
-project(${PRJ_NAME}
-        VERSION 1.0.2.0
-        DESCRIPTION "Simple CMake Starter Project"
-        HOMEPAGE_URL "https://gitlab.com/thiago-rezende/cmake-starter-project"
-        LANGUAGES CXX C)
+project(CMakeStarterProject
+        VERSION 2.0.0
+        DESCRIPTION "A General Purpose CMake Starter Project"
+        HOMEPAGE_URL "https://github.com/thiago-rezende/cmake-starter-project"
+        LANGUAGES CXX)
+
+# Setting the install prefix
+set(CMAKE_INSTALL_PREFIX ${CMAKE_SOURCE_DIR})
+
+# First for the generic no-config case (e.g. with mingw)
+set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
+set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+# Second, for multi-config builds (e.g. msvc)
+foreach( OUTPUT_CONFIG ${CMAKE_CONFIGURATION_TYPES} )
+    string( TOUPPER ${OUTPUT_CONFIG} OUTPUT_CONFIG )
+    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_${OUTPUT_CONFIG} ${CMAKE_BINARY_DIR}/bin)
+    set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_${OUTPUT_CONFIG} ${CMAKE_BINARY_DIR}/lib)
+    set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_${OUTPUT_CONFIG} ${CMAKE_BINARY_DIR}/lib)
+endforeach( OUTPUT_CONFIG CMAKE_CONFIGURATION_TYPES )
 
 # Setting the path to the vendor folder
 set(VENDOR ${CMAKE_SOURCE_DIR}/vendor)
 
-# Setting CMake module path
-list(APPEND CMAKE_MODULE_PATH ${VENDOR}/utils/cmake-pch)
+# Adding the vendor libs directories
+add_subdirectory(${VENDOR}/spdlog)
 
-# Loading CMake pch module
-include(PrecompiledHeader)
+# Setting the project folders
+add_subdirectory(application)
 
-# Setting CXX version
-set(CMAKE_CXX_STANDARD_REQUIRED 17)
-# Setting the output path to the binaries
-set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
-# Setting the output path to the libraries
-set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/lib)
-# Setting the output to the Dinamic Libraries
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-# Stting the install prefix
-set(CMAKE_INSTALL_PREFIX ${CMAKE_SOURCE_DIR})
-
-# Configure the project_config.h
-configure_file(${CMAKE_SOURCE_DIR}/src/project_config.h.in ${CMAKE_SOURCE_DIR}/src/project_config.h)
-
-### Adding the third-party subdirectories
-## Scripting
-# Lua
-add_subdirectory(${VENDOR}/scripting/cmake-lua)
-# Sol3
-## Utils
-add_subdirectory(${VENDOR}/scripting/sol3)
-# Spdlog
-add_subdirectory(${VENDOR}/utils/spdlog)
-## Graphics
-# OpenGL
-find_package(OpenGL REQUIRED)
-# GLFW
-set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
-set(GLFW_INSTALL OFF CACHE BOOL "" FORCE)
-set(GLFW_VULKAN_STATIC OFF CACHE BOOL "" FORCE)
-set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
-set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
-set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
-add_subdirectory(${VENDOR}/graphics/glfw)
-
-# Adding the source folder
-add_subdirectory(src)
+# Visual Studio Config
+if(MSVC)
+    # Enable folders
+    set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+    # Horus Game Engine
+    set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT application)
+    set_property(TARGET application PROPERTY FOLDER "CMakeStarterProject")
+    # Vendor
+    set_property(TARGET spdlog PROPERTY FOLDER "Vendor")
+endif(MSVC)
