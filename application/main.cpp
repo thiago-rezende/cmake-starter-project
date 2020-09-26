@@ -1,5 +1,5 @@
-#include "pch.h"
-#include "core/logger.h"
+#include <application/pch.h>
+#include <application/core/logger.h>
 
 int main()
 {
