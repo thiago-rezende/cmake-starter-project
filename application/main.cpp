@@ -19,5 +19,5 @@ int main()
     H_ERROR("That's an error.");
     H_CRITICAL("That's a critical.");
 
-    return 0;
+    return 1;
 }
