@@ -14,7 +14,7 @@ int main()
     H_INFO("PROJECT URL => {}", PROJECT_HOMEPAGE_URL);
 
     /* Some Log Utils */
-    H_TRACE("CMake Starter Project!");
+    H_TRACE("That's a trace.");
     H_DEBUG("That's a debug.");
     H_INFO("That's an info.");
     H_WARN("That's a warning.");
