@@ -21,22 +21,30 @@
 
  - Libraries Included
     - [Spdlog][spdlog-url]
+    - [GoogleTest][googletest-url]
 
  - Project structure
  ```
     .
-    ├── .github                  # Repository stuff.
-    ├── application              # Application folder.
-    |    ├── assets              # Assets folder.
-    |    ├── core                # Core functionalities folder.
-    |    |    └── logger.h       # Logger utils.
-    |    |    └── logger.cpp     # Logger utils implementation.
-    |    ├── pch.h               # Pre-compiled header.
-    |    ├── main.cpp            # Application entrypoint.
-    |    └── CMakeLists.txt      # Application CMake build script.
-    ├── vendor                   # Third-party packages will be here.
-    |    └── spdlog              # Fast C++ logging library.
-    └── CMakeLists.txt           # Main CMake build script.
+    ├── .github                     # Repository stuff.
+    ├── application                 # Application folder.
+    |    ├── assets                 # Assets folder.
+    |    ├── core                   # Core functionalities folder.
+    |    |    ├── logger.h          # Logger utils.
+    |    |    └── logger.cpp        # Logger utils implementation.
+    |    ├── pch.h                  # Pre-compiled header.
+    |    ├── main.cpp               # Application entrypoint.
+    |    └── CMakeLists.txt         # Application CMake build script.
+    ├── tests                       # Tests folder.
+    |    ├── application            # Application tests.
+    |    |    ├── CMakeLists.txt    # Application tests CMake script.
+    |    |    ├── main.cpp          # Application main test file.
+    |    |    └── never_fails.cpp   # Application test file.
+    |    └── CMakeLists.txt         # Main CMake tests script.
+    ├── vendor                      # Third-party packages will be here.
+    |    ├── spdlog                 # Fast C++ logging library.
+    |    └── googletest             # Google testing and mocking framework.
+    └── CMakeLists.txt              # Main CMake build script.
 ```
  ## Compatibility
 
@@ -49,6 +57,7 @@
 <!-- Links -->
 [cmake-url]: https://cmake.org/
 [spdlog-url]: https://github.com/gabime/spdlog
+[googletest-url]: https://github.com/google/googletest
 
 <!-- Badges -->
 [build-status-badge]: https://github.com/thiago-rezende/cmake-starter-project/workflows/build/badge.svg
