@@ -5,6 +5,12 @@
 ## [Unreleased]
 
 
+## [v2.2.1]
+ - [ea393c0] fix: main application file conflict (Thiago Rezende)
+ - [e984867] Merge branch 'release/v2.2.0' into develop (Thiago Rezende)
+ - [c8cf559] docs: update changelog (Thiago Rezende)
+ - [0da0636] refactor: changed the example trace log message (Thiago Rezende)
+
 ## [v2.2.0]
  - [1a4b208] docs: update version number (Thiago Rezende)
  - [b23ac71] ci: added unit tests (Thiago Rezende)
