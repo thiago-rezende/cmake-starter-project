@@ -23,10 +23,10 @@ namespace Horus
     {
     private:
         /**
-         * @brief Horus logger
+         * @brief Logger
          *
          */
-        static std::shared_ptr<spdlog::logger> s_horus_logger;
+        static std::shared_ptr<spdlog::logger> s_logger;
 
     public:
         /**
@@ -36,23 +36,23 @@ namespace Horus
         static void Init();
 
         /**
-         * @brief Get the horus logger object
+         * @brief Get the logger object
          *
          * @return std::shared_ptr<spdlog::logger>&
          */
-        inline static std::shared_ptr<spdlog::logger> &GetHorusLogger() { return s_horus_logger; }
+        inline static std::shared_ptr<spdlog::logger> &GetLogger() { return s_logger; }
     };
 
 } // namespace Horus
 
 /* Logger Macros */
 #ifdef ENABLE_LOG_MACROS // Only defined on debug builds to save performance
-#define H_TRACE(...) ::Horus::Logger::GetHorusLogger()->trace(__VA_ARGS__)
-#define H_DEBUG(...) ::Horus::Logger::GetHorusLogger()->debug(__VA_ARGS__)
-#define H_INFO(...) ::Horus::Logger::GetHorusLogger()->info(__VA_ARGS__)
-#define H_WARN(...) ::Horus::Logger::GetHorusLogger()->warn(__VA_ARGS__)
-#define H_ERROR(...) ::Horus::Logger::GetHorusLogger()->error(__VA_ARGS__)
-#define H_CRITICAL(...) ::Horus::Logger::GetHorusLogger()->critical(__VA_ARGS__)
+#define H_TRACE(...) ::Horus::Logger::GetLogger()->trace(__VA_ARGS__)
+#define H_DEBUG(...) ::Horus::Logger::GetLogger()->debug(__VA_ARGS__)
+#define H_INFO(...) ::Horus::Logger::GetLogger()->info(__VA_ARGS__)
+#define H_WARN(...) ::Horus::Logger::GetLogger()->warn(__VA_ARGS__)
+#define H_ERROR(...) ::Horus::Logger::GetLogger()->error(__VA_ARGS__)
+#define H_CRITICAL(...) ::Horus::Logger::GetLogger()->critical(__VA_ARGS__)
 #else
 #define H_TRACE(...)
 #define H_DEBUG(...)
