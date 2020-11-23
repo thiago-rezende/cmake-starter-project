@@ -14,7 +14,7 @@ endif()
 
 # Setting up the project name and version
 project(CMakeStarterProject
-        VERSION 2.1.0
+        VERSION 2.2.0
         DESCRIPTION "A Simple C++ Starter Project Using CMake"
         HOMEPAGE_URL "https://github.com/thiago-rezende/cmake-starter-project"
         LANGUAGES CXX)
@@ -42,19 +42,39 @@ endforeach( OUTPUT_CONFIG CMAKE_CONFIGURATION_TYPES )
 # Setting the path to the vendor folder
 set(VENDOR ${CMAKE_SOURCE_DIR}/vendor)
 
+# Adding GoogleTest
+option(BUILD_GMOCK "Builds the googlemock subproject" ON)
+option(INSTALL_GTEST "Enable installation of googletest. (Projects embedding googletest may want to turn this OFF.)" OFF)
+add_subdirectory(${VENDOR}/googletest)
+
 # Adding the vendor libs directories
 add_subdirectory(${VENDOR}/spdlog)
 
 # Setting the project folders
 add_subdirectory(application)
 
+# Adding Tests
+enable_testing()
+add_subdirectory(tests)
+
 # Visual Studio Config
 if(MSVC)
-    # Enable folders
+    ## Enable folders
     set_property(GLOBAL PROPERTY USE_FOLDERS ON)
-    # Horus Game Engine
+    ## Application
     set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT application)
-    set_property(TARGET application PROPERTY FOLDER "CMakeStarterProject")
-    # Vendor
-    set_property(TARGET spdlog PROPERTY FOLDER "Vendor")
+    set_property(TARGET application PROPERTY FOLDER "Application")
+    ## Utils
+    set_property(TARGET copy_resources PROPERTY FOLDER "Utils")
+    ## Tests
+    set_property(TARGET application_tests PROPERTY FOLDER "Tests")
+    set_property(TARGET application_tests PROPERTY FOLDER "Tests")
+    ## Vendor
+    # Google Test
+    set_property(TARGET gtest PROPERTY FOLDER "Vendor/GoogleTest")
+    set_property(TARGET gtest_main PROPERTY FOLDER "Vendor/GoogleTest")
+    set_property(TARGET gmock PROPERTY FOLDER "Vendor/GoogleTest")
+    set_property(TARGET gmock_main PROPERTY FOLDER "Vendor/GoogleTest")
+    # Spdlog
+    set_property(TARGET spdlog PROPERTY FOLDER "Vendor/Spdlog")
 endif(MSVC)

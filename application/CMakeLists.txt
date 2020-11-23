@@ -50,7 +50,7 @@ PUBLIC
 )
 
 # Setting custom commandos to copy all needed files to the right location
-add_custom_target(CopyResources ALL
+add_custom_target(copy_resources ALL
     COMMAND cmake -E copy_directory ${CMAKE_SOURCE_DIR}/application/assets ${CMAKE_BINARY_DIR}/bin/assets
     COMMAND cmake -E copy_directory ${CMAKE_SOURCE_DIR}/application/assets ${CMAKE_SOURCE_DIR}/bin/assets
     DEPENDS application)

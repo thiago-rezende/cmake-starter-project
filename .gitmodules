@@ -2,3 +2,6 @@
 	path = vendor/spdlog
 	url = https://github.com/gabime/spdlog
 	branch = v1.x
+[submodule "vendor/googletest"]
+	path = vendor/googletest
+	url = https://github.com/google/googletest.git

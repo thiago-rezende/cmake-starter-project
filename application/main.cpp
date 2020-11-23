@@ -1,5 +1,4 @@
 #include <application/pch.h>
-#include <application/core/logger.h>
 #include <config.h>
 
 int main()
@@ -14,7 +13,11 @@ int main()
     H_INFO("PROJECT URL => {}", PROJECT_HOMEPAGE_URL);
 
     /* Some Log Utils */
+<<<<<<< HEAD
     H_TRACE("That's a trace.");
+=======
+    H_TRACE("That's a trace!");
+>>>>>>> release/v2.2.0
     H_DEBUG("That's a debug.");
     H_INFO("That's an info.");
     H_WARN("That's a warning.");
