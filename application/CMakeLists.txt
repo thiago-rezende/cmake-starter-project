@@ -19,6 +19,16 @@ set(APPLICATION_SOURCES
 # Application executable
 add_executable(application ${APPLICATION_SOURCES})
 
+# Check for MSVC
+if(MSVC)
+    # Check for dynamic runtime
+    if(MSVC_DYNAMIC_RUNTIME)
+        set_property(TARGET application PROPERTY
+            MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>"
+        )
+    endif()
+endif()
+
 # Definitions
 target_compile_definitions(application
 PUBLIC
@@ -46,11 +56,11 @@ PUBLIC
 # Application libraries
 target_link_libraries(application
 PUBLIC
-    spdlog
+    spdlog::spdlog_header_only
 )
 
 # Setting custom commandos to copy all needed files to the right location
-add_custom_target(copy_resources ALL
+add_custom_target(copy_resources_application ALL
     COMMAND cmake -E copy_directory ${CMAKE_SOURCE_DIR}/application/assets ${CMAKE_BINARY_DIR}/bin/assets
     COMMAND cmake -E copy_directory ${CMAKE_SOURCE_DIR}/application/assets ${CMAKE_SOURCE_DIR}/bin/assets
     DEPENDS application)

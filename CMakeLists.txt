@@ -50,6 +50,9 @@ add_subdirectory(${VENDOR}/googletest)
 # Adding the vendor libs directories
 add_subdirectory(${VENDOR}/spdlog)
 
+# Setting project options
+option(MSVC_DYNAMIC_RUNTIME "Uses MSVC dynamic linked runtime" OFF)
+
 # Setting the project folders
 add_subdirectory(application)
 
@@ -64,10 +67,10 @@ if(MSVC)
     ## Application
     set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT application)
     set_property(TARGET application PROPERTY FOLDER "Application")
+    ## Library
     ## Utils
-    set_property(TARGET copy_resources PROPERTY FOLDER "Utils")
+    set_property(TARGET copy_resources_application PROPERTY FOLDER "Utils")
     ## Tests
-    set_property(TARGET application_tests PROPERTY FOLDER "Tests")
     set_property(TARGET application_tests PROPERTY FOLDER "Tests")
     ## Vendor
     # Google Test
