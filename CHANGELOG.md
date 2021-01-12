@@ -5,6 +5,14 @@
 ## [Unreleased]
 
 
+## [v2.2.2]
+ - [30ec088] docs: update version number (Thiago Rezende)
+ - [47a5217] build: enabled spdlog pre-compiled headers to improve build time (Thiago Rezende)
+ - [e8426d0] feat: added msvc dynamic runtime support (Thiago Rezende)
+ - [d478f8e] docs: update version number (Thiago Rezende)
+ - [8361fe9] docs: update README.md (Thiago Rezende)
+ - [193b726] docs: update changelog (Thiago Rezende)
+
 ## [v2.2.1]
  - [ea393c0] fix: main application file conflict (Thiago Rezende)
  - [e984867] Merge branch 'release/v2.2.0' into develop (Thiago Rezende)
