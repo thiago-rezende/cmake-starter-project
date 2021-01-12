@@ -4,7 +4,7 @@
 
 namespace Horus
 {
-    std::shared_ptr<spdlog::logger> Logger::s_logger;
+    std::shared_ptr<spdlog::logger> Logger::s_logger = nullptr;
 
     void Logger::Init()
     {

@@ -42,12 +42,15 @@ endforeach( OUTPUT_CONFIG CMAKE_CONFIGURATION_TYPES )
 # Setting the path to the vendor folder
 set(VENDOR ${CMAKE_SOURCE_DIR}/vendor)
 
-# Adding GoogleTest
+# Spdlog options
+option(SPDLOG_ENABLE_PCH "Build static or shared library using precompiled header to speed up compilation time" ON)
+
+# GoogleTest options
 option(BUILD_GMOCK "Builds the googlemock subproject" ON)
 option(INSTALL_GTEST "Enable installation of googletest. (Projects embedding googletest may want to turn this OFF.)" OFF)
-add_subdirectory(${VENDOR}/googletest)
 
 # Adding the vendor libs directories
+add_subdirectory(${VENDOR}/googletest)
 add_subdirectory(${VENDOR}/spdlog)
 
 # Setting project options
@@ -67,7 +70,6 @@ if(MSVC)
     ## Application
     set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT application)
     set_property(TARGET application PROPERTY FOLDER "Application")
-    ## Library
     ## Utils
     set_property(TARGET copy_resources_application PROPERTY FOLDER "Utils")
     ## Tests

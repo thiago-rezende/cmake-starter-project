@@ -11,7 +11,10 @@
 
 #pragma once
 
+/* StdLib Things */
 #include <iostream>
+
+/* Horus Logger */
 #include <application/core/logger.h>
 
 /* Windows Things */
