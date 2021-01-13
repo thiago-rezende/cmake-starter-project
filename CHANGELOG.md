@@ -5,6 +5,11 @@
 ## [Unreleased]
 
 
+## [v2.2.3]
+ - [07130c5] docs: update version number (Thiago Rezende)
+ - [f68b055] fix: the option MSVC_DYNAMIC_LINKED_RUNTIME was not setting the dynamic linked runtime to msvc (Thiago Rezende)
+ - [7273d7e] docs: update changelog (Thiago Rezende)
+
 ## [v2.2.2]
  - [30ec088] docs: update version number (Thiago Rezende)
  - [47a5217] build: enabled spdlog pre-compiled headers to improve build time (Thiago Rezende)
