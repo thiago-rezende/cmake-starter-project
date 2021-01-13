@@ -2,10 +2,10 @@
 cmake_minimum_required(VERSION 3.16.0)
 
 # Setting build type
-set(default_build_type "Debug")
+set(DEFAULT_BUILD_TYPE "Debug")
 if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
-  message(STATUS "Setting build type to '${default_build_type}' as none was specified.")
-  set(CMAKE_BUILD_TYPE "${default_build_type}" CACHE
+  message(STATUS "Setting build type to '${DEFAULT_BUILD_TYPE}' as none was specified.")
+  set(CMAKE_BUILD_TYPE "${DEFAULT_BUILD_TYPE}" CACHE
       STRING "Choose the type of build." FORCE)
   # Set the possible values of build type for cmake-gui
   set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS
@@ -32,12 +32,12 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 # Second, for multi-config builds (e.g. msvc)
-foreach( OUTPUT_CONFIG ${CMAKE_CONFIGURATION_TYPES} )
+foreach(OUTPUT_CONFIG ${CMAKE_CONFIGURATION_TYPES})
     string( TOUPPER ${OUTPUT_CONFIG} OUTPUT_CONFIG )
     set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_${OUTPUT_CONFIG} ${CMAKE_BINARY_DIR}/bin)
     set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_${OUTPUT_CONFIG} ${CMAKE_BINARY_DIR}/lib)
     set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_${OUTPUT_CONFIG} ${CMAKE_BINARY_DIR}/lib)
-endforeach( OUTPUT_CONFIG CMAKE_CONFIGURATION_TYPES )
+endforeach(OUTPUT_CONFIG CMAKE_CONFIGURATION_TYPES)
 
 # Setting the path to the vendor folder
 set(VENDOR ${CMAKE_SOURCE_DIR}/vendor)
@@ -54,7 +54,7 @@ add_subdirectory(${VENDOR}/googletest)
 add_subdirectory(${VENDOR}/spdlog)
 
 # Setting project options
-option(MSVC_DYNAMIC_RUNTIME "Uses MSVC dynamic linked runtime" OFF)
+option(MSVC_DYNAMIC_LINKED_RUNTIME "Uses MSVC dynamic linked runtime" OFF)
 
 # Setting the project folders
 add_subdirectory(application)

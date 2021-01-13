@@ -22,7 +22,11 @@ add_executable(application ${APPLICATION_SOURCES})
 # Check for MSVC
 if(MSVC)
     # Check for dynamic runtime
-    if(MSVC_DYNAMIC_RUNTIME)
+    if(MSVC_DYNAMIC_LINKED_RUNTIME)
+        set_property(TARGET application PROPERTY
+            MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:DebugDLL>"
+        )
+    else()
         set_property(TARGET application PROPERTY
             MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>"
         )
