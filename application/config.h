@@ -9,7 +9,7 @@
 /* Project Version [SEMVER] */
 #define PROJECT_VERSION_MAJOR 2
 #define PROJECT_VERSION_MINOR 2
-#define PROJECT_VERSION_PATCH 2
+#define PROJECT_VERSION_PATCH 3
 
 /* Porject Version String [SEMVER] */
-#define PROJECT_VERSION "v2.2.2"
+#define PROJECT_VERSION "v2.2.3"
