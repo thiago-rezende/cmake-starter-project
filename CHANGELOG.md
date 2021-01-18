@@ -5,6 +5,11 @@
 ## [Unreleased]
 
 
+## [v2.2.4]
+ - [038878d] docs: update version number (Thiago Rezende)
+ - [e63773a] fix: dynamic runtime linking was only set on debug mode (Thiago Rezende)
+ - [043e500] docs: update changelog (Thiago Rezende)
+
 ## [v2.2.3]
  - [07130c5] docs: update version number (Thiago Rezende)
  - [f68b055] fix: the option MSVC_DYNAMIC_LINKED_RUNTIME was not setting the dynamic linked runtime to msvc (Thiago Rezende)
