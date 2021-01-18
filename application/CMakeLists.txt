@@ -24,7 +24,7 @@ if(MSVC)
     # Check for dynamic runtime
     if(MSVC_DYNAMIC_LINKED_RUNTIME)
         set_property(TARGET application PROPERTY
-            MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:DebugDLL>"
+            MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL"
         )
     else()
         set_property(TARGET application PROPERTY
