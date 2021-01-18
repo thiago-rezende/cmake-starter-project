@@ -14,7 +14,7 @@ endif()
 
 # Setting up the project name and version
 project(CMakeStarterProject
-        VERSION 2.2.3
+        VERSION 2.2.4
         DESCRIPTION "A Simple C++ Starter Project Using CMake"
         HOMEPAGE_URL "https://github.com/thiago-rezende/cmake-starter-project"
         LANGUAGES CXX)
