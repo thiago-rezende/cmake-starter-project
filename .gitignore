@@ -6,6 +6,7 @@
 bin/
 lib/
 build/
+!**/debug/**
 
 ### CMake ###
 CMakeLists.txt.user

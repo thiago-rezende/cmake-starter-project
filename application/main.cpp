@@ -19,7 +19,7 @@ int main()
 
         {
             /* Profiles the Logging ShowCase Scope */
-            H_PROFILE_SCOPE("Logging ShowCase");
+            H_PROFILE_SCOPE("Logging Showcase");
 
             /* CMake Configured File Defines */
             H_INFO("PROJECT NAME => {}", PROJECT_NAME);
