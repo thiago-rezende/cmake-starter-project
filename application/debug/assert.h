@@ -1,8 +1,6 @@
 /**
  * @file assert.h
  * @brief Some Assertion Utilities
- * @version 1.0
- *
  *
  */
 

@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/thiago-rezende/cmake-starter-project">
-    <img src=".github/logo.png" alt="Logo" width="100" height="100">
+    <img src="https://github.com/thiago-rezende/cmake-starter-project/raw/master/.github/logo.png" alt="Logo" width="100" height="100">
   </a>
 
   <h3 align="center">CMake Starter Project</h3>

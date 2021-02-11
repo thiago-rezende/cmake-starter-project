@@ -19,6 +19,9 @@ project(CMakeStarterProject
         HOMEPAGE_URL "https://github.com/thiago-rezende/cmake-starter-project"
         LANGUAGES CXX)
 
+# Add the cmake folder so the modules path
+set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
+
 # Conan Package Manager
 # include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 # conan_basic_setup()
@@ -58,6 +61,9 @@ configure_file(${CMAKE_SOURCE_DIR}/application/config.in ${CMAKE_SOURCE_DIR}/app
 
 # Setting the project folders
 add_subdirectory(application)
+
+# Adding docs generation
+add_subdirectory(docs)
 
 # Adding Tests
 enable_testing()

@@ -4,6 +4,7 @@
  *
  */
 
+/* Application Entry Point */
 int main()
 {
     /* Starts Profile Session */

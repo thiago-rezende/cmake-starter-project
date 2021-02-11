@@ -34,9 +34,9 @@
 #include <filesystem>
 
 /* Application Config */
-#include "application/config.h"
+#include "config.h"
 
 /* Horus Logger */
-#include "application/core/logger.h"
-#include "application/debug/assert.h"
-#include "application/debug/instrumentor.h"
+#include "core/logger.h"
+#include "debug/assert.h"
+#include "debug/instrumentor.h"
