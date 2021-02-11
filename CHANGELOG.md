@@ -4,6 +4,9 @@
 
 ## [Unreleased]
 
+
+## [v3.0.0]
+ - [accbcb2] docs: update version number (Thiago Rezende)
  - [113e651] docs: added doxygen docs generation (Thiago Rezende)
  - [12b1e42] docs: update README.md (Thiago Rezende)
  - [8b97d81] test: switched from googletest to catch2 (Thiago Rezende)
