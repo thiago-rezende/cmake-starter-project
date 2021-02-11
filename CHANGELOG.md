@@ -4,6 +4,16 @@
 
 ## [Unreleased]
 
+ - [113e651] docs: added doxygen docs generation (Thiago Rezende)
+ - [12b1e42] docs: update README.md (Thiago Rezende)
+ - [8b97d81] test: switched from googletest to catch2 (Thiago Rezende)
+ - [80ffbe0] feat: added some assertion utilities (Thiago Rezende)
+ - [443dc86] fix: fixed wrong chrono type casting (Thiago Rezende)
+ - [de0732e] chore: fixed gitignore wrong exclusion (Thiago Rezende)
+ - [371be7d] feat: improved the funcsig macro detection (Thiago Rezende)
+ - [2349eb6] feat: added basic instrumentation code for profiling (Thiago Rezende)
+ - [893244c] refactor: some refactoring on the cmake files and the logger class and fixed windows header include order (Thiago Rezende)
+ - [814fc45] docs: update changelog (Thiago Rezende)
 
 ## [v2.2.4]
  - [038878d] docs: update version number (Thiago Rezende)
