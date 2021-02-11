@@ -1,23 +1,13 @@
 /**
- * @file pch.h
+ * @file pch.hpp
  * @author Thiago Rezende (thiago-rezende.github.io)
  * @brief Pre-Compiled Header
- * @version 0.1
- * @date 2020-09-26
- *
- * @copyright Copyright (c) 2020 Thiago Rezende
  *
  */
 
 #pragma once
 
-/* StdLib Things */
-#include <iostream>
-
-/* Horus Logger */
-#include <application/core/logger.h>
-
-/* Windows Things */
+/* Windows Stuff */
 #ifdef WIN32
 
 /* Exclude rarely-used services from Windows headers */
@@ -33,3 +23,12 @@
 #include <Windows.h>
 
 #endif // WIN32
+
+/* StdLib Stuff */
+#include <iostream>
+
+/* Application Config */
+#include "application/config.h"
+
+/* Horus Logger */
+#include "application/core/logger.h"

@@ -1,10 +1,14 @@
-#include <application/pch.h>
-#include <config.h>
+/**
+ * @file main.cpp
+ * @author Thiago Rezende (thiago-rezende.github.io)
+ * @brief Application Entry Point
+ *
+ */
 
 int main()
 {
     /* Initialize Logger */
-    Horus::Logger::Init();
+    Horus::Logger::init();
 
     /* CMake Configured File Defines */
     H_INFO("PROJECT NAME => {}", PROJECT_NAME);

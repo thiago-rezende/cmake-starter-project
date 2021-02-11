@@ -22,12 +22,12 @@ add_executable(application ${APPLICATION_SOURCES})
 # Check for MSVC
 if(MSVC)
     # Check for dynamic runtime
-    if(MSVC_DYNAMIC_LINKED_RUNTIME)
-        set_property(TARGET application PROPERTY
+    if(USE_MSVC_DYNAMIC_LINKED_RUNTIME)
+        set_target_properties(application PROPERTIES
             MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL"
         )
     else()
-        set_property(TARGET application PROPERTY
+        set_target_properties(application PROPERTIES
             MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>"
         )
     endif()
@@ -36,12 +36,18 @@ endif()
 # Definitions
 target_compile_definitions(application
 PUBLIC
+    # Debug Build
+    $<$<CONFIG:Debug>:DEBUG>
+    $<$<CONFIG:Debug>:_DEBUG>
     $<$<CONFIG:Debug>:ENABLE_LOG_MACROS>
+    $<$<CONFIG:Debug>:ENABLE_PROFILING>
+    # Release Build
+    $<$<CONFIG:Release>:NDEBUG>
 )
 
 # Setting the pre compiled header
 target_precompile_headers(application PUBLIC
-    "$<$<COMPILE_LANGUAGE:CXX>:${CMAKE_CURRENT_SOURCE_DIR}/pch.h>"
+    "$<$<COMPILE_LANGUAGE:CXX>:${CMAKE_CURRENT_SOURCE_DIR}/pch.hpp>"
 )
 
 # Application properties

@@ -19,9 +19,6 @@ project(CMakeStarterProject
         HOMEPAGE_URL "https://github.com/thiago-rezende/cmake-starter-project"
         LANGUAGES CXX)
 
-# Generate an config.h file based on config.in file
-configure_file(${CMAKE_SOURCE_DIR}/application/config.in ${CMAKE_SOURCE_DIR}/application/config.h @ONLY NEWLINE_STYLE LF)
-
 # Setting the install prefix
 set(CMAKE_INSTALL_PREFIX ${CMAKE_SOURCE_DIR})
 
@@ -54,7 +51,10 @@ add_subdirectory(${VENDOR}/googletest)
 add_subdirectory(${VENDOR}/spdlog)
 
 # Setting project options
-option(MSVC_DYNAMIC_LINKED_RUNTIME "Uses MSVC dynamic linked runtime" OFF)
+option(USE_MSVC_DYNAMIC_LINKED_RUNTIME "Uses MSVC dynamic linked runtime" OFF)
+
+# Generate an config.h file based on config.in file
+configure_file(${CMAKE_SOURCE_DIR}/application/config.in ${CMAKE_SOURCE_DIR}/application/config.h @ONLY NEWLINE_STYLE LF)
 
 # Setting the project folders
 add_subdirectory(application)
