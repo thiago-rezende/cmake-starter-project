@@ -8,6 +8,7 @@ set(APPLICATION_INCLUDE_DIRS
 set(APPLICATION_HEADERS
     "pch.h"
     "core/logger.h"
+    "debug/assert.h"
     "debug/instrumentor.h"
 )
 
@@ -40,8 +41,13 @@ PUBLIC
     # Debug Build
     $<$<CONFIG:Debug>:DEBUG>
     $<$<CONFIG:Debug>:_DEBUG>
-    $<$<CONFIG:Debug>:ENABLE_LOG_MACROS>
+    $<$<CONFIG:Debug>:ENABLE_LOGGER>
     $<$<CONFIG:Debug>:ENABLE_PROFILING>
+    $<$<CONFIG:Debug>:ENABLE_ASSERTIONS>
+    # Release With Debug Info
+    $<$<CONFIG:RelWithDebInfo>:ENABLE_LOGGER>
+    $<$<CONFIG:RelWithDebInfo>:ENABLE_PROFILING>
+    $<$<CONFIG:RelWithDebInfo>:ENABLE_ASSERTIONS>
     # Release Build
     $<$<CONFIG:Release>:NDEBUG>
 )

@@ -1,3 +1,10 @@
+/**
+ * @file instrumentor.h
+ * @brief Simple Instrumentor for Profiling
+ *
+ * This profiler will generate a json file that can be visualized with the chromium tracer
+ */
+
 #pragma once
 
 #include <mutex>

@@ -1,6 +1,5 @@
 /**
  * @file logger.h
- * @author Thiago Rezende (thiago-rezende.github.io)
  * @brief Simple Log Utility
  *
  */
@@ -42,7 +41,7 @@ namespace Horus
 } // namespace Horus
 
 /* Logger Macros */
-#ifdef ENABLE_LOG_MACROS // Only defined on debug builds to save performance
+#ifdef ENABLE_LOGGER // Only defined on debug builds to save performance
 #define H_TRACE(...) ::Horus::Logger::get_logger()->trace(__VA_ARGS__)
 #define H_DEBUG(...) ::Horus::Logger::get_logger()->debug(__VA_ARGS__)
 #define H_INFO(...) ::Horus::Logger::get_logger()->info(__VA_ARGS__)

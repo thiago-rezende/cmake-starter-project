@@ -1,6 +1,5 @@
 /**
  * @file pch.hpp
- * @author Thiago Rezende (thiago-rezende.github.io)
  * @brief Pre-Compiled Header
  *
  */
@@ -32,10 +31,12 @@
 #include <fstream>
 #include <iostream>
 #include <algorithm>
+#include <filesystem>
 
 /* Application Config */
 #include "application/config.h"
 
 /* Horus Logger */
 #include "application/core/logger.h"
+#include "application/debug/assert.h"
 #include "application/debug/instrumentor.h"

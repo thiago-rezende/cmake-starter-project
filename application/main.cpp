@@ -1,6 +1,5 @@
 /**
  * @file main.cpp
- * @author Thiago Rezende (thiago-rezende.github.io)
  * @brief Application Entry Point
  *
  */
@@ -39,6 +38,10 @@ int main()
 
     /* Ends Profile Session */
     H_PROFILE_END_SESSION();
+
+    /* Assertions Examples */
+    H_ASSERT(true);                                  // Assertion with default message
+    H_ASSERTM(true, "Assertion with {}", "message"); // Assertion with user defined message
 
     return 0;
 }
