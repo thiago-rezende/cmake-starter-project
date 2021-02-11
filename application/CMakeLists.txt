@@ -8,6 +8,7 @@ set(APPLICATION_INCLUDE_DIRS
 set(APPLICATION_HEADERS
     "pch.h"
     "core/logger.h"
+    "debug/instrumentor.h"
 )
 
 # Source files
