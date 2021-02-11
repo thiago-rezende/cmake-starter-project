@@ -21,7 +21,7 @@
 
  - Libraries Included
     - [Spdlog][spdlog-url]
-    - [GoogleTest][googletest-url]
+    - [Catch2][catch2-url]
 
  - Project structure
  ```
@@ -32,18 +32,21 @@
     |    ├── core                   # Core functionalities folder.
     |    |    ├── logger.h          # Logger utils.
     |    |    └── logger.cpp        # Logger utils implementation.
-    |    ├── pch.h                  # Pre-compiled header.
+    |    ├── debug                  # Debug functionalities folder.
+    |    |    ├── assert.h          # Assertion utils.
+    |    |    └── instrumentor.h    # Profiling utils.
+    |    ├── pch.hpp                # Pre-compiled header.
+    |    ├── config.h               # Populated at config time.
     |    ├── main.cpp               # Application entrypoint.
     |    └── CMakeLists.txt         # Application CMake build script.
     ├── tests                       # Tests folder.
     |    ├── application            # Application tests.
     |    |    ├── CMakeLists.txt    # Application tests CMake script.
-    |    |    ├── main.cpp          # Application main test file.
     |    |    └── never_fails.cpp   # Application test file.
     |    └── CMakeLists.txt         # Main CMake tests script.
     ├── vendor                      # Third-party packages will be here.
     |    ├── spdlog                 # Fast C++ logging library.
-    |    └── googletest             # Google testing and mocking framework.
+    |    └── catch2                 # A modern, C++-native, header-only, test framework.
     └── CMakeLists.txt              # Main CMake build script.
 ```
  ## Compatibility
@@ -57,7 +60,7 @@
 <!-- Links -->
 [cmake-url]: https://cmake.org/
 [spdlog-url]: https://github.com/gabime/spdlog
-[googletest-url]: https://github.com/google/googletest
+[catch2-url]: https://github.com/catchorg/Catch2
 
 <!-- Badges -->
 [build-status-badge]: https://github.com/thiago-rezende/cmake-starter-project/workflows/build/badge.svg
