@@ -19,6 +19,10 @@ project(CMakeStarterProject
         HOMEPAGE_URL "https://github.com/thiago-rezende/cmake-starter-project"
         LANGUAGES CXX)
 
+# Conan Package Manager
+# include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+# conan_basic_setup()
+
 # Setting the install prefix
 set(CMAKE_INSTALL_PREFIX ${CMAKE_SOURCE_DIR})
 
@@ -42,12 +46,8 @@ set(VENDOR ${CMAKE_SOURCE_DIR}/vendor)
 # Spdlog options
 option(SPDLOG_ENABLE_PCH "Build static or shared library using precompiled header to speed up compilation time" ON)
 
-# GoogleTest options
-option(BUILD_GMOCK "Builds the googlemock subproject" ON)
-option(INSTALL_GTEST "Enable installation of googletest. (Projects embedding googletest may want to turn this OFF.)" OFF)
-
 # Adding the vendor libs directories
-add_subdirectory(${VENDOR}/googletest)
+add_subdirectory(${VENDOR}/catch2)
 add_subdirectory(${VENDOR}/spdlog)
 
 # Setting project options
@@ -76,10 +76,8 @@ if(MSVC)
     set_property(TARGET application_tests PROPERTY FOLDER "Tests")
     ## Vendor
     # Google Test
-    set_property(TARGET gtest PROPERTY FOLDER "Vendor/GoogleTest")
-    set_property(TARGET gtest_main PROPERTY FOLDER "Vendor/GoogleTest")
-    set_property(TARGET gmock PROPERTY FOLDER "Vendor/GoogleTest")
-    set_property(TARGET gmock_main PROPERTY FOLDER "Vendor/GoogleTest")
+    set_property(TARGET Catch2 PROPERTY FOLDER "Vendor/Catch2")
+    set_property(TARGET Catch2WithMain PROPERTY FOLDER "Vendor/Catch2")
     # Spdlog
     set_property(TARGET spdlog PROPERTY FOLDER "Vendor/Spdlog")
 endif(MSVC)

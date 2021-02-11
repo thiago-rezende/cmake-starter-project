@@ -1,6 +1,8 @@
 /**
  * @file assert.h
  * @brief Some Assertion Utilities
+ * @version 1.0
+ *
  *
  */
 
@@ -24,11 +26,8 @@
 #define H_EXPAND_MACRO(x) x
 #define H_STRINGIFY_MACRO(x) #x
 
-/* Assertions */
-/**
- * @brief Simple assertion with default message
- *
- */
+/* Assertion Macros */
+/* Simple assertion with default message */
 #define H_ASSERT(check)                                                                                                                            \
     {                                                                                                                                              \
         if (!(check))                                                                                                                              \
@@ -37,10 +36,7 @@
             H_DEBUGBREAK();                                                                                                                        \
         }                                                                                                                                          \
     }
-/**
- * @brief Simple assertion with custom message
- *
- */
+/* Simple assertion with custom message */
 #define H_ASSERTM(check, message, ...)     \
     {                                      \
         if (!(check))                      \

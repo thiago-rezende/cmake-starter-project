@@ -1,6 +1,6 @@
-#include <gtest/gtest.h>
+#include <catch2/catch_test_macros.hpp>
 
-TEST(Application, NeverFails)
+TEST_CASE("This test should never fail", "[application]")
 {
-    ASSERT_TRUE(true);
+    REQUIRE(true);
 }
