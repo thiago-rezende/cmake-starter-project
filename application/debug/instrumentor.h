@@ -123,7 +123,7 @@ namespace Horus
 
             void stop()
             {
-                std::chrono::steady_clock::time_point end_time_point = std::chrono::high_resolution_clock::now();
+                auto end_time_point = std::chrono::high_resolution_clock::now();
 
                 m_result.start = std::chrono::time_point_cast<std::chrono::microseconds>(m_start_time_point).time_since_epoch().count();
                 m_result.end = std::chrono::time_point_cast<std::chrono::microseconds>(end_time_point).time_since_epoch().count();
