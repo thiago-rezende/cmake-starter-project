@@ -5,6 +5,11 @@
 ## [Unreleased]
 
 
+## [v3.0.1]
+ - [dfb9e1c] docs: update version number (Thiago Rezende)
+ - [e1918f5] refactor: removed unnecessary include file (Thiago Rezende)
+ - [f0a02df] docs: update changelog (Thiago Rezende)
+
 ## [v3.0.0]
  - [accbcb2] docs: update version number (Thiago Rezende)
  - [113e651] docs: added doxygen docs generation (Thiago Rezende)
