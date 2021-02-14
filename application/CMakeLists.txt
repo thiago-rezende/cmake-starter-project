@@ -22,14 +22,14 @@ add_executable(application ${APPLICATION_SOURCES} ${APPLICATION_HEADERS})
 
 # Check for MSVC
 if(MSVC)
-    # Check for dynamic runtime
-    if(USE_MSVC_DYNAMIC_LINKED_RUNTIME)
+    # Check for static runtime option
+    if(APPLICATION_USE_MSVC_STATIC_LINKED_RUNTIME)
         set_target_properties(application PROPERTIES
-            MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL"
+            MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>"
         )
     else()
         set_target_properties(application PROPERTIES
-            MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>"
+            MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL"
         )
     endif()
 endif()
@@ -44,11 +44,15 @@ PUBLIC
     $<$<CONFIG:Debug>:ENABLE_PROFILING>
     $<$<CONFIG:Debug>:ENABLE_ASSERTIONS>
     # Release With Debug Info
+    $<$<CONFIG:RelWithDebInfo>:DEBUG>
+    $<$<CONFIG:RelWithDebInfo>:_DEBUG>
     $<$<CONFIG:RelWithDebInfo>:ENABLE_LOGGER>
     $<$<CONFIG:RelWithDebInfo>:ENABLE_PROFILING>
     $<$<CONFIG:RelWithDebInfo>:ENABLE_ASSERTIONS>
     # Release Build
     $<$<CONFIG:Release>:NDEBUG>
+    # MinSizeRel Build
+    $<$<CONFIG:MinSizeRel>:NDEBUG>
 )
 
 # Setting the pre compiled header

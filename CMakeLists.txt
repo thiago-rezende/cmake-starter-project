@@ -54,7 +54,7 @@ add_subdirectory(${VENDOR}/catch2)
 add_subdirectory(${VENDOR}/spdlog)
 
 # Setting project options
-option(USE_MSVC_DYNAMIC_LINKED_RUNTIME "Uses MSVC dynamic linked runtime" OFF)
+option(APPLICATION_USE_MSVC_STATIC_LINKED_RUNTIME "Uses MSVC static linked runtime" OFF)
 
 # Generate an config.h file based on config.in file
 configure_file(${CMAKE_SOURCE_DIR}/application/config.in ${CMAKE_SOURCE_DIR}/application/config.h @ONLY NEWLINE_STYLE LF)
@@ -76,12 +76,14 @@ if(MSVC)
     ## Application
     set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT application)
     set_property(TARGET application PROPERTY FOLDER "Application")
+    ## Docs
+    set_property(TARGET doxygen PROPERTY FOLDER "Docs")
     ## Utils
     set_property(TARGET copy_resources_application PROPERTY FOLDER "Utils")
     ## Tests
     set_property(TARGET application_tests PROPERTY FOLDER "Tests")
     ## Vendor
-    # Google Test
+    # Catch2
     set_property(TARGET Catch2 PROPERTY FOLDER "Vendor/Catch2")
     set_property(TARGET Catch2WithMain PROPERTY FOLDER "Vendor/Catch2")
     # Spdlog
