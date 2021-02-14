@@ -76,8 +76,6 @@ if(MSVC)
     ## Application
     set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT application)
     set_property(TARGET application PROPERTY FOLDER "Application")
-    ## Docs
-    set_property(TARGET doxygen PROPERTY FOLDER "Docs")
     ## Utils
     set_property(TARGET copy_resources_application PROPERTY FOLDER "Utils")
     ## Tests
