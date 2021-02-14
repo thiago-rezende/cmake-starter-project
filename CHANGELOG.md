@@ -5,6 +5,11 @@
 ## [Unreleased]
 
 
+## [v3.0.3]
+ - [133d936] docs: update version number (Thiago Rezende)
+ - [e9d1b66] refactor: changed the behaviour of the runtime type selection and added doxygen target to a docs folder on msvc (Thiago Rezende)
+ - [74d23f9] docs: update changelog (Thiago Rezende)
+
 ## [v3.0.2]
  - [1be7c20] docs: update version number (Thiago Rezende)
  - [3cd1642] fix: wrong pch extension (Thiago Rezende)
