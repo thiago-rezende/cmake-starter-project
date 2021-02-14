@@ -5,6 +5,11 @@
 ## [Unreleased]
 
 
+## [v3.0.2]
+ - [1be7c20] docs: update version number (Thiago Rezende)
+ - [3cd1642] fix: wrong pch extension (Thiago Rezende)
+ - [e734417] docs: update changelog (Thiago Rezende)
+
 ## [v3.0.1]
  - [dfb9e1c] docs: update version number (Thiago Rezende)
  - [e1918f5] refactor: removed unnecessary include file (Thiago Rezende)
