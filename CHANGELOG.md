@@ -5,6 +5,11 @@
 ## [Unreleased]
 
 
+## [v3.0.4]
+ - [870a987] docs: update version number (Thiago Rezende)
+ - [a3a09e7] revert: removed doxygen target from msvc folders (Thiago Rezende)
+ - [04b6eda] docs: update changelog (Thiago Rezende)
+
 ## [v3.0.3]
  - [133d936] docs: update version number (Thiago Rezende)
  - [e9d1b66] refactor: changed the behaviour of the runtime type selection and added doxygen target to a docs folder on msvc (Thiago Rezende)
