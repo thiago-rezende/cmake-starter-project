@@ -5,7 +5,7 @@ set(APPLICATION_INCLUDE_DIRS
 
 # Header files
 set(APPLICATION_HEADERS
-    "pch.h"
+    # "pch.hpp"
     "core/logger.h"
     "debug/assert.h"
     "debug/instrumentor.h"
@@ -18,7 +18,7 @@ set(APPLICATION_SOURCES
 )
 
 # Application executable
-add_executable(application ${APPLICATION_SOURCES})
+add_executable(application ${APPLICATION_SOURCES} ${APPLICATION_HEADERS})
 
 # Check for MSVC
 if(MSVC)
@@ -73,6 +73,7 @@ PUBLIC
 target_link_libraries(application
 PUBLIC
     spdlog::spdlog_header_only
+    # ${CONAN_LIBS}
 )
 
 # Setting custom commandos to copy all needed files to the right location
