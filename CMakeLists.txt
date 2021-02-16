@@ -1,6 +1,15 @@
 # Minimum version to run the script
 cmake_minimum_required(VERSION 3.16.0)
 
+# VCPKG Library Manager
+# if(DEFINED ENV{VCPKG_ROOT} AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
+#     set(CMAKE_TOOLCHAIN_FILE "$ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake" CACHE STRING "")
+# endif()
+
+# Conan Package Manager
+# include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+# conan_basic_setup()
+
 # Setting build type
 set(DEFAULT_BUILD_TYPE "Debug")
 if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
@@ -21,10 +30,6 @@ project(CMakeStarterProject
 
 # Add the cmake folder so the modules path
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/cmake)
-
-# Conan Package Manager
-# include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
-# conan_basic_setup()
 
 # Setting the install prefix
 set(CMAKE_INSTALL_PREFIX ${CMAKE_SOURCE_DIR})
@@ -98,3 +103,12 @@ message(STATUS "[INFO] CMAKE_RUNTIME_OUTPUT_DIRECTORY -> ${CMAKE_RUNTIME_OUTPUT_
 message(STATUS "[INFO] CMAKE_LIBRARY_OUTPUT_DIRECTORY -> ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}")
 message(STATUS "[INFO] CMAKE_ARCHIVE_OUTPUT_DIRECTORY -> ${CMAKE_ARCHIVE_OUTPUT_DIRECTORY}")
 message(STATUS "[INFO] VENDOR -> ${VENDOR}")
+
+if(DEFINED CMAKE_TOOLCHAIN_FILE)
+    message(STATUS "[INFO] CMAKE_TOOLCHAIN_FILE -> ${CMAKE_TOOLCHAIN_FILE}")
+endif()
+
+if(DEFINED VCPKG_CHAINLOAD_TOOLCHAIN_FILE)
+    message(STATUS "[INFO] VCPKG_CHAINLOAD_TOOLCHAIN_FILE -> ${VCPKG_CHAINLOAD_TOOLCHAIN_FILE}")
+endif()
+
