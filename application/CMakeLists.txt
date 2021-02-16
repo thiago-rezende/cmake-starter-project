@@ -37,22 +37,32 @@ endif()
 # Definitions
 target_compile_definitions(application
 PUBLIC
+    # General definitions
+    UNICODE
+    _UNICODE
+
     # Debug Build
     $<$<CONFIG:Debug>:DEBUG>
     $<$<CONFIG:Debug>:_DEBUG>
     $<$<CONFIG:Debug>:ENABLE_LOGGER>
     $<$<CONFIG:Debug>:ENABLE_PROFILING>
     $<$<CONFIG:Debug>:ENABLE_ASSERTIONS>
+
     # Release With Debug Info
     $<$<CONFIG:RelWithDebInfo>:DEBUG>
     $<$<CONFIG:RelWithDebInfo>:_DEBUG>
     $<$<CONFIG:RelWithDebInfo>:ENABLE_LOGGER>
     $<$<CONFIG:RelWithDebInfo>:ENABLE_PROFILING>
     $<$<CONFIG:RelWithDebInfo>:ENABLE_ASSERTIONS>
+
     # Release Build
     $<$<CONFIG:Release>:NDEBUG>
+
     # MinSizeRel Build
     $<$<CONFIG:MinSizeRel>:NDEBUG>
+
+    # Conan definitions
+    # ${CONAN_DEFINES}
 )
 
 # Setting the pre compiled header
@@ -77,6 +87,8 @@ PUBLIC
 target_link_libraries(application
 PUBLIC
     spdlog::spdlog_header_only
+
+    # Conan libraries
     # ${CONAN_LIBS}
 )
 

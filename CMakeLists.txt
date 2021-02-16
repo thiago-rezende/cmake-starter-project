@@ -29,6 +29,7 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/cmake)
 # Setting the install prefix
 set(CMAKE_INSTALL_PREFIX ${CMAKE_SOURCE_DIR})
 
+# Setting the output dirs config
 # First for the generic no-config case (e.g. with mingw)
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
 set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/lib)
