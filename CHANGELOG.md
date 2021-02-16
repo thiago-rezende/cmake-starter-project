@@ -5,6 +5,12 @@
 ## [Unreleased]
 
 
+## [v3.0.5]
+ - [8a5d9ad] docs: update version number (Thiago Rezende)
+ - [30e8dde] feat: added unicode definitions and some boilerplate for conan package manager (Thiago Rezende)
+ - [638f24a] refactor: proper way of adding cmake modules path and added some info logs (Thiago Rezende)
+ - [d7fa0e0] docs: update changelog (Thiago Rezende)
+
 ## [v3.0.4]
  - [870a987] docs: update version number (Thiago Rezende)
  - [a3a09e7] revert: removed doxygen target from msvc folders (Thiago Rezende)
