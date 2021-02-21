@@ -10,8 +10,12 @@
  */
 #pragma once
 
+/* Check for Emscripten */
+#if defined(__EMSCRIPTEN__)
+#define H_PLATFORM_EMSCRIPTEN
+// #error "[PLATFORM]: Emscripten platform is not supported!"
 /* Check for Windows platform */
-#if defined(_WIN32)
+#elif defined(_WIN32)
 #define H_PLATFORM_WINDOWS
 // #error "[PLATFORM]: Windows platform is not supported!"
 /* Windows x64/x86 */

@@ -28,7 +28,9 @@ int main(int argc, char **argv)
             H_INFO("[PROJECT_URL] {}", PROJECT_HOMEPAGE_URL);
 
             /* Platform Detection Utils */
-#if defined(H_PLATFORM_WINDOWS)
+#if defined(H_PLATFORM_EMSCRIPTEN)
+            H_INFO("[PLATFORM] {}", "Emscripten");
+#elif defined(H_PLATFORM_WINDOWS)
             H_INFO("[PLATFORM] {}", "Windows");
 #elif defined(H_PLATFORM_IOS)
             H_INFO("[PLATFORM] {}", "IOS");
@@ -38,7 +40,7 @@ int main(int argc, char **argv)
             H_INFO("[PLATFORM] {}", "Android");
 #elif defined(H_PLATFORM_LINUX)
             H_INFO("[PLATFORM] {}", "Linux");
-#endif
+#endif // Platform Detection Utils
 
             /* Log Utils */
             H_TRACE("That's a trace!");
