@@ -37,6 +37,7 @@
     |    |    └── instrumentor.h    # Profiling utils.
     |    ├── pch.hpp                # Pre-compiled header.
     |    ├── config.h               # Populated at config time.
+    |    ├── config.h               # Populated at config time.
     |    ├── main.cpp               # Application entrypoint.
     |    └── CMakeLists.txt         # Application CMake build script.
     ├── tests                       # Tests folder.

@@ -8,17 +8,18 @@
 
 #include <filesystem>
 
+/* Defined only on debug builds */
 #ifdef ENABLE_ASSERTIONS
 
 /* Platform Checking for Proper Debugbreak */
 #if defined(_WIN32)
 #define H_DEBUGBREAK() __debugbreak() // MSVC Debugbreak
-#elif defined(__linux__)
+#elif defined(__linux__) || defined(__APPLE__) || defined(__MACH__)
 #include <signal.h>
-#define H_DEBUGBREAK() raise(SIGTRAP) // Linux Debugbreak
+#define H_DEBUGBREAK() raise(SIGTRAP) // Posix Debugbreak
 #else
 #define H_DEBUGBREAK() // No Debugbreak Available
-#endif                 // _WIN32 on __linux__
+#endif                 // _WIN32 or __linux__
 
 /* Macro Utilities */
 #define H_EXPAND_MACRO(x) x
@@ -34,6 +35,7 @@
             H_DEBUGBREAK();                                                                                                                        \
         }                                                                                                                                          \
     }
+
 /* Simple assertion with custom message */
 #define H_ASSERTM(check, message, ...)     \
     {                                      \

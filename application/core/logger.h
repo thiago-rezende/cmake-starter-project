@@ -28,7 +28,7 @@ namespace Horus
          * @brief Initialize the logging system
          *
          */
-        static void init(const std::string &logger_name = "LOGGER");
+        static void init(const std::string &logger_name = "log");
 
         /**
          * @brief Get the logger object

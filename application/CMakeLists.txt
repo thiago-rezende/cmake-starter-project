@@ -1,11 +1,15 @@
 # Include dirs
 set(APPLICATION_INCLUDE_DIRS
     ${CMAKE_CURRENT_SOURCE_DIR}
+
+    # Conan include dirs
+    #${CONAN_INCLUDE_DIRS}
 )
 
 # Header files
 set(APPLICATION_HEADERS
     # "pch.hpp"
+    "core/platform_detection.h"
     "core/logger.h"
     "debug/assert.h"
     "debug/instrumentor.h"
@@ -23,7 +27,7 @@ add_executable(application ${APPLICATION_SOURCES} ${APPLICATION_HEADERS})
 # Check for MSVC
 if(MSVC)
     # Check for static runtime option
-    if(APPLICATION_USE_MSVC_STATIC_LINKED_RUNTIME)
+    if(USE_STATIC_RUNTIME)
         set_target_properties(application PROPERTIES
             MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>"
         )

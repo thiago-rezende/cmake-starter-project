@@ -61,10 +61,11 @@ add_subdirectory(${VENDOR}/catch2)
 add_subdirectory(${VENDOR}/spdlog)
 
 # Setting project options
-option(APPLICATION_USE_MSVC_STATIC_LINKED_RUNTIME "Uses MSVC static linked runtime" OFF)
+option(USE_STATIC_RUNTIME "Uses MSVC static linked runtime" OFF)
+option(BUILD_DOCUMENTATION "Build documentation for the project (requires Doxygen)" ON)
 
-# Generate an config.h file based on config.in file
-configure_file(${CMAKE_SOURCE_DIR}/application/config.in ${CMAKE_SOURCE_DIR}/application/config.h @ONLY NEWLINE_STYLE LF)
+# Generate an config.h file based on config.h.in file
+configure_file(${CMAKE_SOURCE_DIR}/application/config.h.in ${CMAKE_SOURCE_DIR}/application/config.h @ONLY NEWLINE_STYLE LF)
 
 # Setting the project folders
 add_subdirectory(application)
@@ -83,6 +84,10 @@ if(MSVC)
     ## Application
     set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT application)
     set_property(TARGET application PROPERTY FOLDER "Application")
+    ## Docs
+    if(BUILD_DOCUMENTATION)
+        set_property(TARGET doxygen PROPERTY FOLDER "Docs")
+    endif()
     ## Utils
     set_property(TARGET copy_resources_application PROPERTY FOLDER "Utils")
     ## Tests
@@ -112,3 +117,10 @@ if(DEFINED VCPKG_CHAINLOAD_TOOLCHAIN_FILE)
     message(STATUS "[INFO] VCPKG_CHAINLOAD_TOOLCHAIN_FILE -> ${VCPKG_CHAINLOAD_TOOLCHAIN_FILE}")
 endif()
 
+if(USE_STATIC_RUNTIME)
+    message(STATUS "[OPTION] RUNTIME_TYPE -> Static")
+else()
+    message(STATUS "[OPTION] RUNTIME_TYPE -> Dynamic")
+endif()
+
+message(STATUS "[OPTION] BUILD_DOCUMENTATION -> ${BUILD_DOCUMENTATION}")

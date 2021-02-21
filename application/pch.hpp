@@ -14,7 +14,14 @@
 /* Application Config */
 #include "config.h"
 
+/* Platform Detection */
+#include "core/platform_detection.h"
+
 /* Horus Logger */
 #include "core/logger.h"
+
+/* Horus Assertions */
 #include "debug/assert.h"
+
+/* Horus Instrumentation */
 #include "debug/instrumentor.h"
