@@ -62,7 +62,7 @@ add_subdirectory(${VENDOR}/spdlog)
 
 # Setting project options
 option(USE_STATIC_RUNTIME "Uses MSVC static linked runtime" OFF)
-option(BUILD_DOCUMENTATION "Build documentation for the project (requires Doxygen)" ON)
+option(BUILD_DOCUMENTATION "Build documentation for the project (requires Doxygen)" OFF)
 
 # Generate an config.h file based on config.h.in file
 configure_file(${CMAKE_SOURCE_DIR}/application/config.h.in ${CMAKE_SOURCE_DIR}/application/config.h @ONLY NEWLINE_STYLE LF)
