@@ -1,4 +1,4 @@
-# C-Plus-Plus Starter Project Using CMake
+# C++ Starter Project Using CMake
 ![build-status-badge] ![license-badge] ![cpp-badge] ![cmake-badge]
 <!-- PROJECT LOGO -->
 <br />
@@ -22,6 +22,16 @@
  - Libraries Included
     - [Spdlog][spdlog-url]
     - [Catch2][catch2-url]
+
+ - Features
+    - Full featured logger
+    - Assertion utilities compatible with the logger
+    - Instrumentation for profiling [compatible with chromium tracing]
+    - Platform detection utilities
+    - Documentation generation with Doxygen
+    - Unit testing with Catch2 and CTest
+    - CI with GitHub Actions
+    - Pre-compiled headers to improve build times
 
  - Project structure
  ```
