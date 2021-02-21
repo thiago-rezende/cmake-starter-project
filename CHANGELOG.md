@@ -5,6 +5,12 @@
 ## [Unreleased]
 
 
+## [v3.1.2]
+ - [b69b129] docs: update version number (Thiago Rezende)
+ - [eeba916] feat: added emscripten to platform detection (Thiago Rezende)
+ - [271c31f] docs: update README.md (Thiago Rezende)
+ - [59aa724] docs: update changelog (Thiago Rezende)
+
 ## [v3.1.1]
  - [7fd6f5f] docs: update version number (Thiago Rezende)
  - [740d86b] fix: fixed branch name on README.md (Thiago Rezende)
