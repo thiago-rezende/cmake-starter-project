@@ -5,6 +5,18 @@
 ## [Unreleased]
 
 
+## [v3.1.1]
+ - [7fd6f5f] docs: update version number (Thiago Rezende)
+ - [740d86b] fix: fixed branch name on README.md (Thiago Rezende)
+
+## [v3.1.0]
+ - [f3d832e] docs: update version number (Thiago Rezende)
+ - [1f0694a] docs: update README.md (Thiago Rezende)
+ - [e75cb61] chore: set default build docs option to be off (Thiago Rezende)
+ - [adc8c04] feat: added platform detection and improved assertion macros (Thiago Rezende)
+ - [c0770ed] feat: added boilerplate config for vcpkg toolchain detection (Thiago Rezende)
+ - [048c6e9] docs: update changelog (Thiago Rezende)
+
 ## [v3.0.5]
  - [8a5d9ad] docs: update version number (Thiago Rezende)
  - [30e8dde] feat: added unicode definitions and some boilerplate for conan package manager (Thiago Rezende)
