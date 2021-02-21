@@ -8,8 +8,8 @@
 
 /* Project Version [SEMVER] */
 #define PROJECT_VERSION_MAJOR 3
-#define PROJECT_VERSION_MINOR 0
-#define PROJECT_VERSION_PATCH 5
+#define PROJECT_VERSION_MINOR 1
+#define PROJECT_VERSION_PATCH 0
 
 /* Porject Version String [SEMVER] */
-#define PROJECT_VERSION "v3.0.5"
+#define PROJECT_VERSION "v3.1.0"
