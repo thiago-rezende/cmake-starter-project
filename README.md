@@ -26,29 +26,30 @@
  - Project structure
  ```
     .
-    ├── .github                     # Repository stuff.
-    ├── application                 # Application folder.
-    |    ├── assets                 # Assets folder.
-    |    ├── core                   # Core functionalities folder.
-    |    |    ├── logger.h          # Logger utils.
-    |    |    └── logger.cpp        # Logger utils implementation.
-    |    ├── debug                  # Debug functionalities folder.
-    |    |    ├── assert.h          # Assertion utils.
-    |    |    └── instrumentor.h    # Profiling utils.
-    |    ├── pch.hpp                # Pre-compiled header.
-    |    ├── config.h               # Populated at config time.
-    |    ├── config.h               # Populated at config time.
-    |    ├── main.cpp               # Application entrypoint.
-    |    └── CMakeLists.txt         # Application CMake build script.
-    ├── tests                       # Tests folder.
-    |    ├── application            # Application tests.
-    |    |    ├── CMakeLists.txt    # Application tests CMake script.
-    |    |    └── never_fails.cpp   # Application test file.
-    |    └── CMakeLists.txt         # Main CMake tests script.
-    ├── vendor                      # Third-party packages will be here.
-    |    ├── spdlog                 # Fast C++ logging library.
-    |    └── catch2                 # A modern, C++-native, header-only, test framework.
-    └── CMakeLists.txt              # Main CMake build script.
+    ├── .github                         # Repository stuff.
+    ├── application                     # Application folder.
+    |    ├── assets                     # Assets folder.
+    |    ├── core                       # Core functionalities folder.
+    |    |    ├── logger.h              # Logger utils.
+    |    |    ├── logger.cpp            # Logger utils implementation.
+    |    |    └── platform_detection.h  # Platform detection macros.
+    |    ├── debug                      # Debug functionalities folder.
+    |    |    ├── assert.h              # Assertion utils.
+    |    |    └── instrumentor.h        # Profiling utils.
+    |    ├── pch.hpp                    # Pre-compiled header.
+    |    ├── config.h                   # Populated at config time.
+    |    ├── config.h.in                # Template for config.h.
+    |    ├── main.cpp                   # Application entrypoint.
+    |    └── CMakeLists.txt             # Application CMake build script.
+    ├── tests                           # Tests folder.
+    |    ├── application                # Application tests.
+    |    |    ├── CMakeLists.txt        # Application tests CMake script.
+    |    |    └── never_fails.cpp       # Application test file.
+    |    └── CMakeLists.txt             # Main CMake tests script.
+    ├── vendor                          # Third-party packages will be here.
+    |    ├── spdlog                     # Fast C++ logging library.
+    |    └── catch2                     # A modern, C++-native, header-only, test framework.
+    └── CMakeLists.txt                  # Main CMake build script.
 ```
  ## Compatibility
 
