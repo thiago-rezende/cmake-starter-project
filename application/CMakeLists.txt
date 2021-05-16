@@ -1,14 +1,10 @@
 # Include dirs
 set(APPLICATION_INCLUDE_DIRS
     ${CMAKE_CURRENT_SOURCE_DIR}
-
-    # Conan include dirs
-    #${CONAN_INCLUDE_DIRS}
 )
 
 # Header files
 set(APPLICATION_HEADERS
-    # "pch.hpp"
     "core/platform_detection.h"
     "core/logger.h"
     "debug/assert.h"
@@ -53,8 +49,7 @@ PUBLIC
     $<$<CONFIG:Debug>:ENABLE_ASSERTIONS>
 
     # Release With Debug Info
-    $<$<CONFIG:RelWithDebInfo>:DEBUG>
-    $<$<CONFIG:RelWithDebInfo>:_DEBUG>
+    $<$<CONFIG:RelWithDebInfo>:NDEBUG>
     $<$<CONFIG:RelWithDebInfo>:ENABLE_LOGGER>
     $<$<CONFIG:RelWithDebInfo>:ENABLE_PROFILING>
     $<$<CONFIG:RelWithDebInfo>:ENABLE_ASSERTIONS>
@@ -64,9 +59,6 @@ PUBLIC
 
     # MinSizeRel Build
     $<$<CONFIG:MinSizeRel>:NDEBUG>
-
-    # Conan definitions
-    # ${CONAN_DEFINES}
 )
 
 # Setting the pre compiled header
@@ -91,9 +83,6 @@ PUBLIC
 target_link_libraries(application
 PUBLIC
     spdlog::spdlog_header_only
-
-    # Conan libraries
-    # ${CONAN_LIBS}
 )
 
 # Setting custom commandos to copy all needed files to the right location
