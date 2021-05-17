@@ -1,6 +1,9 @@
 # Minimum version to run the script
 cmake_minimum_required(VERSION 3.16.0)
 
+# Policies
+cmake_policy(SET CMP0091 NEW) # MSVC runtime library flags are selected by an abstraction.
+
 # VCPKG Library Manager
 # if(DEFINED ENV{VCPKG_ROOT} AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
 #     set(CMAKE_TOOLCHAIN_FILE "$ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake" CACHE STRING "")
@@ -49,7 +52,6 @@ foreach(OUTPUT_CONFIG ${CMAKE_CONFIGURATION_TYPES})
     set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_${OUTPUT_CONFIG} ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR})
     set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_${OUTPUT_CONFIG} ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR})
 endforeach(OUTPUT_CONFIG CMAKE_CONFIGURATION_TYPES)
-
 
 # Setting the path to the vendor folder
 set(VENDOR ${CMAKE_SOURCE_DIR}/vendor)
