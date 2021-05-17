@@ -38,4 +38,9 @@ if(BUILD_DOCUMENTATION)
 
     add_custom_target(doxygen ALL DEPENDS ${DOXYGEN_INDEX_FILE})
 
+    add_custom_target(copy_doxygen_documentation ALL
+        COMMAND cmake -E copy_directory ${DOXYGEN_OUTPUT_DIR}/html/ ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_DOCDIR}
+        DEPENDS doxygen)
+
+    install(DIRECTORY ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_DOCDIR}/ TYPE DOC)
 endif()

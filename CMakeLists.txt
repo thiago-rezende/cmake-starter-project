@@ -32,7 +32,7 @@ project(CMakeStarterProject
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/cmake)
 
 # Setting the install dirs
-set(CMAKE_INSTALL_PREFIX ${CMAKE_BINARY_DIR}/${PROJECT_NAME})
+# set(CMAKE_INSTALL_PREFIX ${CMAKE_BINARY_DIR}/${PROJECT_NAME})
 include(GNUInstallDirs)
 
 # Setting the output dirs config
@@ -91,6 +91,9 @@ if(MSVC)
     endif()
     ## Utils
     set_property(TARGET copy_resources_application PROPERTY FOLDER "Utils")
+    if(BUILD_DOCUMENTATION)
+        set_property(TARGET copy_doxygen_documentation PROPERTY FOLDER "Utils")
+    endif()
     ## Tests
     set_property(TARGET application_tests PROPERTY FOLDER "Tests")
     ## Vendor
