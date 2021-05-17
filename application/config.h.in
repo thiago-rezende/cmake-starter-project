@@ -13,3 +13,38 @@
 
 /* Porject Version String [SEMVER] */
 #define PROJECT_VERSION "v@PROJECT_VERSION_MAJOR@.@PROJECT_VERSION_MINOR@.@PROJECT_VERSION_PATCH@"
+
+/* GNU Install Dirs */
+#define CMAKE_INSTALL_BINDIR "@CMAKE_INSTALL_BINDIR@"                 // user executables (bin)
+#define CMAKE_INSTALL_SBINDIR "@CMAKE_INSTALL_SBINDIR@"               // system admin executables (sbin)
+#define CMAKE_INSTALL_LIBEXECDIR "@CMAKE_INSTALL_LIBEXECDIR@"         // program executables (libexec)
+#define CMAKE_INSTALL_SYSCONFDIR "@CMAKE_INSTALL_SYSCONFDIR@"         // read-only single-machine data (etc)
+#define CMAKE_INSTALL_SHAREDSTATEDIR "@CMAKE_INSTALL_SHAREDSTATEDIR@" // modifiable architecture-independent data (com)
+#define CMAKE_INSTALL_LOCALSTATEDIR "@CMAKE_INSTALL_LOCALSTATEDIR@"   // modifiable single-machine data (var)
+#define CMAKE_INSTALL_RUNSTATEDIR "@CMAKE_INSTALL_RUNSTATEDIR@"       // New in version 3.9: run-time variable data (LOCALSTATEDIR/run)
+#define CMAKE_INSTALL_LIBDIR "@CMAKE_INSTALL_LIBDIR@"                 // object code libraries (lib or lib64 or lib/<multiarch-tuple> on Debian)
+#define CMAKE_INSTALL_INCLUDEDIR "@CMAKE_INSTALL_INCLUDEDIR@"         // C header files (include)
+#define CMAKE_INSTALL_OLDINCLUDEDIR "@CMAKE_INSTALL_OLDINCLUDEDIR@"   // C header files for non-gcc (/usr/include)
+#define CMAKE_INSTALL_DATAROOTDIR "@CMAKE_INSTALL_DATAROOTDIR@"       // read-only architecture-independent data root (share)
+#define CMAKE_INSTALL_DATADIR "@CMAKE_INSTALL_DATADIR@"               // read-only architecture-independent data (DATAROOTDIR)
+#define CMAKE_INSTALL_INFODIR "@CMAKE_INSTALL_INFODIR@"               // info documentation (DATAROOTDIR/info)
+#define CMAKE_INSTALL_LOCALEDIR "@CMAKE_INSTALL_LOCALEDIR@"           // locale-dependent data (DATAROOTDIR/locale)
+#define CMAKE_INSTALL_MANDIR "@CMAKE_INSTALL_MANDIR@"                 // man documentation (DATAROOTDIR/man)`
+#define CMAKE_INSTALL_DOCDIR "@CMAKE_INSTALL_DOCDIR@"       // documentation root (DATAROOTDIR/doc/PROJECT_NAME)
+
+#define CMAKE_INSTALL_FULL_BINDIR "@CMAKE_INSTALL_FULL_BINDIR@"                 // user executables (bin)
+#define CMAKE_INSTALL_FULL_SBINDIR "@CMAKE_INSTALL_FULL_SBINDIR@"               // system admin executables (sbin)
+#define CMAKE_INSTALL_FULL_LIBEXECDIR "@CMAKE_INSTALL_FULL_LIBEXECDIR@"         // program executables (libexec)
+#define CMAKE_INSTALL_FULL_SYSCONFDIR "@CMAKE_INSTALL_FULL_SYSCONFDIR@"         // read-only single-machine data (etc)
+#define CMAKE_INSTALL_FULL_SHAREDSTATEDIR "@CMAKE_INSTALL_FULL_SHAREDSTATEDIR@" // modifiable architecture-independent data (com)
+#define CMAKE_INSTALL_FULL_LOCALSTATEDIR "@CMAKE_INSTALL_FULL_LOCALSTATEDIR@"   // modifiable single-machine data (var)
+#define CMAKE_INSTALL_FULL_RUNSTATEDIR "@CMAKE_INSTALL_FULL_RUNSTATEDIR@"       // New in version 3.9: run-time variable data (LOCALSTATEDIR/run)
+#define CMAKE_INSTALL_FULL_LIBDIR "@CMAKE_INSTALL_FULL_LIBDIR@"                 // object code libraries (lib or lib64 or lib/<multiarch-tuple> on Debian)
+#define CMAKE_INSTALL_FULL_INCLUDEDIR "@CMAKE_INSTALL_FULL_INCLUDEDIR@"         // C header files (include)
+#define CMAKE_INSTALL_FULL_OLDINCLUDEDIR "@CMAKE_INSTALL_FULL_OLDINCLUDEDIR@"   // C header files for non-gcc (/usr/include)
+#define CMAKE_INSTALL_FULL_DATAROOTDIR "@CMAKE_INSTALL_FULL_DATAROOTDIR@"       // read-only architecture-independent data root (share)
+#define CMAKE_INSTALL_FULL_DATADIR "@CMAKE_INSTALL_FULL_DATADIR@"               // read-only architecture-independent data (DATAROOTDIR)
+#define CMAKE_INSTALL_FULL_INFODIR "@CMAKE_INSTALL_FULL_INFODIR@"               // info documentation (DATAROOTDIR/info)
+#define CMAKE_INSTALL_FULL_LOCALEDIR "@CMAKE_INSTALL_FULL_LOCALEDIR@"           // locale-dependent data (DATAROOTDIR/locale)
+#define CMAKE_INSTALL_FULL_MANDIR "@CMAKE_INSTALL_FULL_MANDIR@"                 // man documentation (DATAROOTDIR/man)
+#define CMAKE_INSTALL_FULL_DOCDIR "@CMAKE_INSTALL_FULL_DOCDIR@"                 // documentation root (DATAROOTDIR/doc/PROJECT_NAME)

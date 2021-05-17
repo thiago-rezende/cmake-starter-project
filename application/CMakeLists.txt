@@ -86,11 +86,10 @@ PUBLIC
 )
 
 # Setting custom commandos to copy all needed files to the right location
-add_custom_target(copy_resources_application ALL
-    COMMAND cmake -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/assets ${CMAKE_BINARY_DIR}/bin/assets
-    COMMAND cmake -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/assets ${CMAKE_SOURCE_DIR}/bin/assets
-    DEPENDS application)
+# add_custom_target(copy_resources_application ALL
+#     COMMAND cmake -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/assets ${CMAKE_BINARY_DIR}/bin/assets
+#     COMMAND cmake -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/assets ${CMAKE_SOURCE_DIR}/bin/assets
+#     DEPENDS application)
 
 # Setting the install command to the app
-install(TARGETS application RUNTIME DESTINATION bin)
-install(TARGETS application LIBRARY DESTINATION lib)
+install(TARGETS application)
