@@ -38,7 +38,7 @@
     .
     ├── .github                         # Repository stuff.
     ├── application                     # Application folder.
-    |    ├── assets                     # Assets folder.
+    |    ├── share                      # Assets folder [DATADIR].
     |    ├── core                       # Core functionalities folder.
     |    |    ├── logger.h              # Logger utils.
     |    |    ├── logger.cpp            # Logger utils implementation.
