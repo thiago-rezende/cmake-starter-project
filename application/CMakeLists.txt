@@ -85,7 +85,7 @@ PUBLIC
     spdlog::spdlog_header_only
 )
 
-# Setting custom commandos to copy all needed files  to the right location [share]
+# Setting custom command to copy all needed files to the right location [share]
 add_custom_target(copy_resources_application ALL
     COMMAND cmake -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/${CMAKE_INSTALL_DATADIR} ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_DATADIR}
     DEPENDS application)
