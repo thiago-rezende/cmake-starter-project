@@ -53,19 +53,27 @@ foreach(OUTPUT_CONFIG ${CMAKE_CONFIGURATION_TYPES})
     set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_${OUTPUT_CONFIG} ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR})
 endforeach(OUTPUT_CONFIG CMAKE_CONFIGURATION_TYPES)
 
+# Project options
+option(USE_MSVC_STATIC_RUNTIME "Uses MSVC static linked runtime" ON)
+option(BUILD_DOCUMENTATION "Build documentation for the project (requires Doxygen)" OFF)
+
+# MSVC Runtime
+if(USE_MSVC_STATIC_RUNTIME)
+    set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+else()
+    set(CMAKE_MSVC_RUNTIME_LIBRARY  "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL")
+endif()
+
 # Setting the path to the vendor folder
 set(VENDOR ${CMAKE_SOURCE_DIR}/vendor)
 
+## Vendor options
 # Spdlog options
 option(SPDLOG_ENABLE_PCH "Build static or shared library using precompiled header to speed up compilation time" ON)
 
 # Adding the vendor libs directories
 add_subdirectory(${VENDOR}/catch2)
 add_subdirectory(${VENDOR}/spdlog)
-
-# Setting project options
-option(USE_STATIC_RUNTIME "Uses MSVC static linked runtime" ON)
-option(BUILD_DOCUMENTATION "Build documentation for the project (requires Doxygen)" OFF)
 
 # Generate an config.h file based on config.h.in file
 configure_file(${CMAKE_SOURCE_DIR}/application/config.h.in ${CMAKE_SOURCE_DIR}/application/config.h @ONLY NEWLINE_STYLE LF)

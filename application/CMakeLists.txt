@@ -20,20 +20,6 @@ set(APPLICATION_SOURCES
 # Application executable
 add_executable(application ${APPLICATION_SOURCES} ${APPLICATION_HEADERS})
 
-# Check for MSVC
-if(MSVC)
-    # Check for static runtime option
-    if(USE_STATIC_RUNTIME)
-        set_target_properties(application PROPERTIES
-            MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>"
-        )
-    else()
-        set_target_properties(application PROPERTIES
-            MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL"
-        )
-    endif()
-endif()
-
 # Definitions
 target_compile_definitions(application
 PUBLIC
@@ -81,8 +67,9 @@ PUBLIC
 
 # Application libraries
 target_link_libraries(application
-PUBLIC
-    spdlog::spdlog_header_only
+PRIVATE
+    # spdlog::spdlog_header_only
+    spdlog::spdlog
 )
 
 # Setting custom command to copy all needed files to the right location [share]
