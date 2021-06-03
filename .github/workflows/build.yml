@@ -2,15 +2,12 @@ name: build
 
 on: [push]
 
-env:
-  # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
-  BUILD_TYPE: Release
-
 jobs:
   build:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
+        config: [Debug Release]
 
     runs-on: ${{ matrix.os }}
 
@@ -19,24 +16,24 @@ jobs:
         with:
           submodules: "recursive"
 
-      - name: Create Build Environment
-        run: cmake -E make_directory ${{runner.workspace}}/build
+      - name: Create Build Environment [${{ matrix.config }}]
+        run: cmake -E make_directory ${{ runner.workspace }}/build-${{ matrix.config }}
 
-      - name: Configure CMake
+      - name: Configure CMake [${{ matrix.config }}]
         shell: bash
-        working-directory: ${{runner.workspace}}/build
+        working-directory: ${{ runner.workspace }}/build-${{ matrix.config }}
         # Note the current convention is to use the -S and -B options here to specify source
         # and build directories, but this is only available with CMake 3.13 and higher.
         # The CMake binaries on the Github Actions machines are (as of this writing) 3.12
-        run: cmake $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE=$BUILD_TYPE
+        run: cmake $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE=${{ matrix.config }}
 
-      - name: Build
-        working-directory: ${{runner.workspace}}/build
+      - name: Build [${{ matrix.config }}]
+        working-directory: ${{ runner.workspace }}/build-${{ matrix.config }}
         shell: bash
         # Execute the build.  You can specify a specific target with "--target <NAME>"
-        run: cmake --build . --config $BUILD_TYPE
+        run: cmake --build . --config ${{ matrix.config }}
 
-      - name: Test
-        working-directory: ${{runner.workspace}}/build
+      - name: Test [${{ matrix.config }}]
+        working-directory: ${{ runner.workspace }}/build-${{ matrix.config }}
         shell: bash
-        run: ctest . -C $BUILD_TYPE
+        run: ctest . -C ${{ matrix.config }}
