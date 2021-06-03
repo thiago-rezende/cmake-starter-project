@@ -71,9 +71,15 @@ set(VENDOR ${CMAKE_SOURCE_DIR}/vendor)
 # Spdlog options
 option(SPDLOG_ENABLE_PCH "Build static or shared library using precompiled header to speed up compilation time" ON)
 
+# Doctest options
+option(DOCTEST_WITH_TESTS               "Build tests/examples" OFF)
+option(DOCTEST_WITH_MAIN_IN_STATIC_LIB  "Build a static lib (cmake target) with a default main entry point" ON)
+option(DOCTEST_NO_INSTALL               "Skip the installation process" ON)
+option(DOCTEST_USE_STD_HEADERS          "Use std headers" ON)
+
 # Adding the vendor libs directories
-add_subdirectory(${VENDOR}/catch2)
 add_subdirectory(${VENDOR}/spdlog)
+add_subdirectory(${VENDOR}/doctest)
 
 # Generate an config.h file based on config.h.in file
 configure_file(${CMAKE_SOURCE_DIR}/application/config.h.in ${CMAKE_SOURCE_DIR}/application/config.h @ONLY NEWLINE_STYLE LF)
@@ -107,11 +113,11 @@ if(MSVC)
     ## Tests
     set_property(TARGET application_tests PROPERTY FOLDER "Tests")
     ## Vendor
-    # Catch2
-    set_property(TARGET Catch2 PROPERTY FOLDER "Vendor/Catch2")
-    set_property(TARGET Catch2WithMain PROPERTY FOLDER "Vendor/Catch2")
     # Spdlog
     set_property(TARGET spdlog PROPERTY FOLDER "Vendor/Spdlog")
+    # Doctest
+    set_property(TARGET doctest PROPERTY FOLDER "Vendor/Catch2")
+    set_property(TARGET doctest_with_main PROPERTY FOLDER "Vendor/Doctest")
 endif(MSVC)
 
 # Log info

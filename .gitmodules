@@ -2,6 +2,6 @@
 	path = vendor/spdlog
 	url = https://github.com/gabime/spdlog
 	branch = v1.x
-[submodule "vendor/catch2"]
-	path = vendor/catch2
-	url = https://github.com/catchorg/Catch2.git
+[submodule "vendor/doctest"]
+	path = vendor/doctest
+	url = https://github.com/onqtam/doctest.git

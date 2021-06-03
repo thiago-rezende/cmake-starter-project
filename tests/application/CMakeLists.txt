@@ -13,4 +13,4 @@ add_executable(application_tests
 
 add_test(NAME application_tests COMMAND application_tests)
 
-target_link_libraries(application_tests PUBLIC Catch2WithMain)
+target_link_libraries(application_tests PUBLIC doctest_with_main)
