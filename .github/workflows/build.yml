@@ -81,8 +81,8 @@ jobs:
         shell: bash
         run: ctest . -C ${{ env.CMAKE_CONFIG_TYPE }}
 
-  deploy:
-    needs: build
+  docs:
+    needs: test
 
     strategy:
       matrix:
@@ -97,7 +97,7 @@ jobs:
       - name: Setup Doxygen
         shell: bash
         run: |
-          apt-get install -y doxygen graphviz
+          sudo apt-get install -y doxygen graphviz
 
       ###########
       ## Cache ##
