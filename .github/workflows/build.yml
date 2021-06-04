@@ -33,6 +33,35 @@ jobs:
         # Execute the build.  You can specify a specific target with "--target <NAME>"
         run: cmake --build . --config ${{ matrix.config }}
 
+      - name: Cache Build [${{ matrix.config }}]
+        uses: actions/cache@v2
+        with:
+          path: |
+            ${{ runner.workspace }}/build-${{ matrix.config }}
+          key: ${{ matrix.os }}-build-${{ matrix.config }}-${{ github.sha }}
+          restore-keys: |
+            ${{ matrix.os }}-build-${{ matrix.config }}-${{ github.sha }}
+
+  test:
+    needs: build
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        config: [Debug, Release]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Cache Build [${{ matrix.config }}]
+        uses: actions/cache@v2
+        with:
+          path: |
+            ${{ runner.workspace }}/build-${{ matrix.config }}
+          key: ${{ matrix.os }}-build-${{ matrix.config }}-${{ github.sha }}
+          restore-keys: |
+            ${{ matrix.os }}-build-${{ matrix.config }}-${{ github.sha }}
+
       - name: Test [${{ matrix.config }}]
         working-directory: ${{ runner.workspace }}/build-${{ matrix.config }}
         shell: bash
