@@ -24,7 +24,7 @@ jobs:
       - name: Configure CMake
         shell: bash
         working-directory: ${{ runner.workspace }}/build
-        run: cmake $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE
+        run: cmake $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE=${{ env.CMAKE_CONFIG_TYPE }}
 
       - name: Build
         working-directory: ${{ runner.workspace }}/build
