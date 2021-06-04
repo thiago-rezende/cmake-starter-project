@@ -46,11 +46,10 @@ jobs:
         uses: actions/cache@v2
         with:
           path: |
-            ${{ runner.workspace }}
             ${{ runner.workspace }}/build
-          key: ${{ matrix.os }}-${{ github.sha }}
+          key: ${{ matrix.os }}-build-${{ github.sha }}
           restore-keys: |
-            ${{ matrix.os }}-${{ github.sha }}
+            ${{ matrix.os }}-build-${{ github.sha }}
 
   test:
     needs: build
@@ -69,11 +68,10 @@ jobs:
         uses: actions/cache@v2
         with:
           path: |
-            ${{ runner.workspace }}
             ${{ runner.workspace }}/build
-          key: ${{ matrix.os }}-${{ github.sha }}
+          key: ${{ matrix.os }}-build-${{ github.sha }}
           restore-keys: |
-            ${{ matrix.os }}-${{ github.sha }}
+            ${{ matrix.os }}-build-${{ github.sha }}
 
       ##########
       ## Test ##
@@ -93,6 +91,10 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: "recursive"
+
       ###########
       ## Setup ##
       ###########
