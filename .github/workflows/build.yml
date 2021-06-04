@@ -20,6 +20,9 @@ jobs:
         with:
           submodules: "recursive"
 
+      ###########
+      ## Build ##
+      ###########
       - name: Create Build Environment
         run: cmake -E make_directory ${{ runner.workspace }}/build
 
@@ -89,6 +92,14 @@ jobs:
 
     steps:
       ###########
+      ## Setup ##
+      ###########
+      - name: Setup Doxygen
+        shell: bash
+        run: |
+          apt-get install -y doxygen graphviz
+
+      ###########
       ## Cache ##
       ###########
       - name: Cache Build
@@ -100,6 +111,9 @@ jobs:
           restore-keys: |
             ${{ matrix.os }}-build-${{ github.sha }}
 
+      ###########
+      ## Build ##
+      ###########
       - name: Configure CMake
         shell: bash
         working-directory: ${{ runner.workspace }}/build
