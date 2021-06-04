@@ -2,6 +2,9 @@
 # Created by https://www.gitignore.io/api/xcode,cmake,linux,macos,windows,codeblocks,visualstudio,visualstudiocode
 # Edit at https://www.gitignore.io/?templates=xcode,cmake,linux,macos,windows,codeblocks,visualstudio,visualstudiocode
 
+### Vendor ###
+vendor/
+
 ### Build ###
 bin/
 lib/
