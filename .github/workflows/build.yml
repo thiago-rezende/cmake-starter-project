@@ -31,15 +31,6 @@ jobs:
         shell: bash
         run: cmake --build . --config Debug
 
-      - name: Cache Build [Debug]
-        uses: actions/cache@v2
-        with:
-          path: |
-            ${{ runner.workspace }}/build-Debug
-          key: ${{ matrix.os }}-build-Debug-${{ github.sha }}
-          restore-keys: |
-            ${{ matrix.os }}-build-Debug-${{ github.sha }}
-
       #############
       ## Release ##
       #############
@@ -56,14 +47,18 @@ jobs:
         shell: bash
         run: cmake --build . --config Release
 
-      - name: Cache Build [Release]
+      ###########
+      ## Cache ##
+      ###########
+      - name: Cache Build [All]
         uses: actions/cache@v2
         with:
           path: |
+            ${{ runner.workspace }}/build-Debug
             ${{ runner.workspace }}/build-Release
-          key: ${{ matrix.os }}-build-Release-${{ github.sha }}
+          key: ${{ matrix.os }}-build-${{ github.sha }}
           restore-keys: |
-            ${{ matrix.os }}-build-Release-${{ github.sha }}
+            ${{ matrix.os }}-build-${{ github.sha }}
 
   test:
     needs: build
@@ -71,39 +66,27 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
-        config: [Debug, Release]
 
     runs-on: ${{ matrix.os }}
 
     steps:
       ###########
-      ## Debug ##
+      ## Cache ##
       ###########
-      - name: Cache Build [Debug]
+      - name: Cache Build [All]
         uses: actions/cache@v2
         with:
           path: |
             ${{ runner.workspace }}/build-Debug
-          key: ${{ matrix.os }}-build-Debug-${{ github.sha }}
+            ${{ runner.workspace }}/build-Release
+          key: ${{ matrix.os }}-build-${{ github.sha }}
           restore-keys: |
-            ${{ matrix.os }}-build-Debug-${{ github.sha }}
+            ${{ matrix.os }}-build-${{ github.sha }}
 
       - name: Test [Debug]
         working-directory: ${{ runner.workspace }}/build-Debug
         shell: bash
         run: ctest . -C Debug
-
-      #############
-      ## Release ##
-      #############
-      - name: Cache Build [Release]
-        uses: actions/cache@v2
-        with:
-          path: |
-            ${{ runner.workspace }}/build-Release
-          key: ${{ matrix.os }}-build-Release-${{ github.sha }}
-          restore-keys: |
-            ${{ matrix.os }}-build-Release-${{ github.sha }}
 
       - name: Test [Release]
         working-directory: ${{ runner.workspace }}/build-Release
