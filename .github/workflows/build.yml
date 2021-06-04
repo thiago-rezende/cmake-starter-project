@@ -130,3 +130,21 @@ jobs:
         working-directory: ${{ runner.workspace }}/build
         shell: bash
         run: cmake --build . --config ${{ env.CMAKE_CONFIG_TYPE }}
+
+      - name: GitHub Pages [main]
+        if: github.ref == "refs/heads/main"
+        uses: peaceiris/actions-gh-pages@v3.7.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ${{ runner.workspace }}//build/docs/doxygen/html
+          destination_dir: main
+          commit_message: ${{ github.event.head_commit.message }}
+
+      - name: GitHub Pages [develop]
+        if: github.ref == "refs/heads/develop"
+        uses: peaceiris/actions-gh-pages@v3.7.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ${{ runner.workspace }}//build/docs/doxygen/html
+          destination_dir: develop
+          commit_message: ${{ github.event.head_commit.message }}
