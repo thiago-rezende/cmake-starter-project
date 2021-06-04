@@ -115,8 +115,9 @@ if(MSVC)
     ## Vendor
     # Spdlog
     set_property(TARGET spdlog PROPERTY FOLDER "Vendor/Spdlog")
+    set_property(TARGET spdlog_header_only PROPERTY FOLDER "Vendor/Spdlog")
     # Doctest
-    set_property(TARGET doctest PROPERTY FOLDER "Vendor/Catch2")
+    set_property(TARGET doctest PROPERTY FOLDER "Vendor/Doctest")
     set_property(TARGET doctest_with_main PROPERTY FOLDER "Vendor/Doctest")
 endif(MSVC)
 

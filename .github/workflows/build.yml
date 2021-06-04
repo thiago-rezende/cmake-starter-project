@@ -2,6 +2,9 @@ name: build
 
 on: [push]
 
+env:
+  CMAKE_CONFIG_TYPE: Release
+
 jobs:
   build:
     strategy:
@@ -15,47 +18,27 @@ jobs:
         with:
           submodules: "recursive"
 
-      ###########
-      ## Debug ##
-      ###########
-      - name: Create Build Environment [Debug]
-        run: cmake -E make_directory ${{ runner.workspace }}/build-Debug
+      - name: Create Build Environment
+        run: cmake -E make_directory ${{ runner.workspace }}/build
 
-      - name: Configure CMake [Debug]
+      - name: Configure CMake
         shell: bash
-        working-directory: ${{ runner.workspace }}/build-Debug
-        run: cmake $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE=Debug
+        working-directory: ${{ runner.workspace }}/build
+        run: cmake $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE
 
-      - name: Build [Debug]
-        working-directory: ${{ runner.workspace }}/build-Debug
+      - name: Build
+        working-directory: ${{ runner.workspace }}/build
         shell: bash
-        run: cmake --build . --config Debug
-
-      #############
-      ## Release ##
-      #############
-      - name: Create Build Environment [Release]
-        run: cmake -E make_directory ${{ runner.workspace }}/build-Release
-
-      - name: Configure CMake [Release]
-        shell: bash
-        working-directory: ${{ runner.workspace }}/build-Release
-        run: cmake $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE=Release
-
-      - name: Build [Release]
-        working-directory: ${{ runner.workspace }}/build-Release
-        shell: bash
-        run: cmake --build . --config Release
+        run: cmake --build . --config ${{ env.CMAKE_CONFIG_TYPE }}
 
       ###########
       ## Cache ##
       ###########
-      - name: Cache Build [All]
+      - name: Cache Build
         uses: actions/cache@v2
         with:
           path: |
-            ${{ runner.workspace }}/build-Debug
-            ${{ runner.workspace }}/build-Release
+            ${{ runner.workspace }}/build
           key: ${{ matrix.os }}-build-${{ github.sha }}
           restore-keys: |
             ${{ matrix.os }}-build-${{ github.sha }}
@@ -73,22 +56,19 @@ jobs:
       ###########
       ## Cache ##
       ###########
-      - name: Cache Build [All]
+      - name: Cache Build
         uses: actions/cache@v2
         with:
           path: |
-            ${{ runner.workspace }}/build-Debug
-            ${{ runner.workspace }}/build-Release
+            ${{ runner.workspace }}/build
           key: ${{ matrix.os }}-build-${{ github.sha }}
           restore-keys: |
             ${{ matrix.os }}-build-${{ github.sha }}
 
-      - name: Test [Debug]
-        working-directory: ${{ runner.workspace }}/build-Debug
+      ##########
+      ## Test ##
+      ##########
+      - name: Test
+        working-directory: ${{ runner.workspace }}/build
         shell: bash
-        run: ctest . -C Debug
-
-      - name: Test [Release]
-        working-directory: ${{ runner.workspace }}/build-Release
-        shell: bash
-        run: ctest . -C Release
+        run: ctest . -C ${{ env.CMAKE_CONFIG_TYPE }}

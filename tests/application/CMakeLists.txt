@@ -4,6 +4,7 @@ set(APPLICATION_TESTS_HEADERS
 
 set(APPLICATION_TESTS_SOURCES
     "never_fails.cpp"
+    "factorial.cpp"
 )
 
 add_executable(application_tests
