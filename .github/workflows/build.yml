@@ -132,7 +132,7 @@ jobs:
         run: cmake --build . --config ${{ env.CMAKE_CONFIG_TYPE }}
 
       - name: GitHub Pages [main]
-        if: github.ref == "refs/heads/main"
+        if: github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v3.7.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -141,7 +141,7 @@ jobs:
           commit_message: ${{ github.event.head_commit.message }}
 
       - name: GitHub Pages [develop]
-        if: github.ref == "refs/heads/develop"
+        if: github.ref == 'refs/heads/develop'
         uses: peaceiris/actions-gh-pages@v3.7.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
