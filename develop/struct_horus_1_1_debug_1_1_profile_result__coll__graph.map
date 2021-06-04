@@ -1,7 +1,7 @@
 <map id="Horus::Debug::ProfileResult" name="Horus::Debug::ProfileResult">
-<area shape="rect" id="node1" title=" " alt="" coords="45,200,245,227"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,96,80,123"/>
-<area shape="rect" id="node3" title=" " alt="" coords="104,96,187,123"/>
-<area shape="rect" id="node4" title="STL class." alt="" coords="211,96,298,123"/>
-<area shape="rect" id="node5" title="STL class." alt="" coords="185,5,324,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="51,301,251,379"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,147,80,224"/>
+<area shape="rect" id="node3" title=" " alt="" coords="109,147,192,224"/>
+<area shape="rect" id="node4" title="STL class." alt="" coords="217,147,303,224"/>
+<area shape="rect" id="node5" title="STL class." alt="" coords="191,5,329,97"/>
 </map>
