@@ -75,7 +75,7 @@
 [doctest-url]: https://github.com/onqtam/doctest
 
 <!-- Badges -->
-[build-status-badge]: https://github.com/thiago-rezende/cmake-starter-project/workflows/build/badge.svg
+[build-status-badge]: https://github.com/thiago-rezende/cmake-starter-project/workflows/CI/CD/badge.svg
 [license-badge]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
 [cmake-badge]: https://img.shields.io/badge/CMake-3.16.0-blueviolet.svg?style=flat-square
 [cpp-badge]: https://img.shields.io/badge/C++-17-orange.svg?style=flat-square
