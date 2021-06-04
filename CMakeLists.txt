@@ -54,7 +54,7 @@ foreach(OUTPUT_CONFIG ${CMAKE_CONFIGURATION_TYPES})
 endforeach(OUTPUT_CONFIG CMAKE_CONFIGURATION_TYPES)
 
 # Project options
-option(USE_MSVC_STATIC_RUNTIME "Uses MSVC static linked runtime" ON)
+option(USE_MSVC_STATIC_RUNTIME "Uses MSVC static linked runtime" OFF)
 option(BUILD_DOCUMENTATION "Build documentation for the project (requires Doxygen)" OFF)
 
 # MSVC Runtime

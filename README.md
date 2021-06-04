@@ -21,7 +21,7 @@
 
  - Libraries Included
     - [Spdlog][spdlog-url]
-    - [Catch2][catch2-url]
+    - [Doctest][doctest-url]
 
  - Features
     - Full featured logger
@@ -72,7 +72,7 @@
 <!-- Links -->
 [cmake-url]: https://cmake.org/
 [spdlog-url]: https://github.com/gabime/spdlog
-[catch2-url]: https://github.com/catchorg/Catch2
+[doctest-url]: https://github.com/onqtam/doctest
 
 <!-- Badges -->
 [build-status-badge]: https://github.com/thiago-rezende/cmake-starter-project/workflows/build/badge.svg

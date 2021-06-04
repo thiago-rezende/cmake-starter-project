@@ -4,6 +4,8 @@ on: [push]
 
 env:
   CMAKE_CONFIG_TYPE: Release
+  USE_MSVC_STATIC_RUNTIME: OFF
+  BUILD_DOCUMENTATION: ON
 
 jobs:
   build:
@@ -24,7 +26,10 @@ jobs:
       - name: Configure CMake
         shell: bash
         working-directory: ${{ runner.workspace }}/build
-        run: cmake $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE=${{ env.CMAKE_CONFIG_TYPE }}
+        run: |
+          cmake $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE=${{ env.CMAKE_CONFIG_TYPE }} \
+          -DUSE_MSVC_STATIC_RUNTIME=${{ env.USE_MSVC_STATIC_RUNTIME }} \
+          -DBUILD_DOCUMENTATION=${{ env.BUILD_DOCUMENTATION }}
 
       - name: Build
         working-directory: ${{ runner.workspace }}/build
