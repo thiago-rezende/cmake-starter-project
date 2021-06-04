@@ -26,7 +26,7 @@ if(BUILD_DOCUMENTATION)
     set(DOXYGEN_EXAMPLES_DIR ${CMAKE_CURRENT_SOURCE_DIR}/examples)
     set(DOXYGEN_IMAGES_DIR ${CMAKE_CURRENT_SOURCE_DIR}/images)
     set(DOXYGEN_LOGO "")
-    set(DOXYGEN_HTML_EXTRA_STYLESHEET "${CMAKE_CURRENT_SOURCE_DIR}/theme/doxygen-awesome.css ${CMAKE_CURRENT_SOURCE_DIR}/theme/doxygen-awesome-sidenav.css")
+    set(DOXYGEN_HTML_EXTRA_STYLESHEET "${CMAKE_CURRENT_SOURCE_DIR}/theme/doxygen-awesome.css")
 
     # Replace variables inside @@ with the current values
     configure_file(${DOXYFILE_IN} ${DOXYFILE_OUT} @ONLY)
