@@ -1,10 +1,10 @@
 <map id="Horus::Debug::InstrumentationTimer" name="Horus::Debug::InstrumentationTimer">
-<area shape="rect" id="node1" title=" " alt="" coords="189,456,411,577"/>
-<area shape="rect" id="node2" href="$struct_horus_1_1_debug_1_1_profile_result.html" title=" " alt="" coords="51,309,251,386"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,147,80,224"/>
-<area shape="rect" id="node4" title=" " alt="" coords="109,147,192,224"/>
-<area shape="rect" id="node5" title="STL class." alt="" coords="217,147,303,224"/>
-<area shape="rect" id="node6" title="STL class." alt="" coords="191,5,329,97"/>
-<area shape="rect" id="node7" title=" " alt="" coords="275,309,325,386"/>
-<area shape="rect" id="node8" title=" " alt="" coords="349,301,536,393"/>
+<area shape="rect" id="node1" title=" " alt="" coords="183,304,406,345"/>
+<area shape="rect" id="node2" href="$struct_horus_1_1_debug_1_1_profile_result.html" title=" " alt="" coords="45,207,245,234"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,96,80,123"/>
+<area shape="rect" id="node4" title=" " alt="" coords="104,96,187,123"/>
+<area shape="rect" id="node5" title="STL class." alt="" coords="211,96,298,123"/>
+<area shape="rect" id="node6" title="STL class." alt="" coords="185,5,324,47"/>
+<area shape="rect" id="node7" title=" " alt="" coords="269,207,320,234"/>
+<area shape="rect" id="node8" title=" " alt="" coords="344,200,531,241"/>
 </map>
