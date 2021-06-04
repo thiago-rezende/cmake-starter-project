@@ -46,10 +46,11 @@ jobs:
         uses: actions/cache@v2
         with:
           path: |
+            ${{ runner.workspace }}
             ${{ runner.workspace }}/build
-          key: ${{ matrix.os }}-build-${{ github.sha }}
+          key: ${{ matrix.os }}-${{ github.sha }}
           restore-keys: |
-            ${{ matrix.os }}-build-${{ github.sha }}
+            ${{ matrix.os }}-${{ github.sha }}
 
   test:
     needs: build
@@ -68,10 +69,11 @@ jobs:
         uses: actions/cache@v2
         with:
           path: |
+            ${{ runner.workspace }}
             ${{ runner.workspace }}/build
-          key: ${{ matrix.os }}-build-${{ github.sha }}
+          key: ${{ matrix.os }}-${{ github.sha }}
           restore-keys: |
-            ${{ matrix.os }}-build-${{ github.sha }}
+            ${{ matrix.os }}-${{ github.sha }}
 
       ##########
       ## Test ##
