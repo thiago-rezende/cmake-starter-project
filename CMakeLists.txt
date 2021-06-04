@@ -82,7 +82,7 @@ add_subdirectory(${VENDOR}/spdlog)
 add_subdirectory(${VENDOR}/doctest)
 
 # Generate an config.h file based on config.h.in file
-configure_file(${CMAKE_SOURCE_DIR}/application/config.h.in ${CMAKE_SOURCE_DIR}/application/config.h @ONLY NEWLINE_STYLE LF)
+configure_file(${CMAKE_SOURCE_DIR}/application/config.h.in ${CMAKE_SOURCE_DIR}/application/config.h @ONLY)
 
 # Setting the project folders
 add_subdirectory(application)
