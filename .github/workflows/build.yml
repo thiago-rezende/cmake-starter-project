@@ -5,7 +5,7 @@ on: [push]
 env:
   CMAKE_CONFIG_TYPE: Release
   USE_MSVC_STATIC_RUNTIME: OFF
-  BUILD_DOCUMENTATION: ON
+  BUILD_DOCUMENTATION: OFF
 
 jobs:
   build:
@@ -77,3 +77,38 @@ jobs:
         working-directory: ${{ runner.workspace }}/build
         shell: bash
         run: ctest . -C ${{ env.CMAKE_CONFIG_TYPE }}
+
+  deploy:
+    needs: build
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      ###########
+      ## Cache ##
+      ###########
+      - name: Cache Build
+        uses: actions/cache@v2
+        with:
+          path: |
+            ${{ runner.workspace }}/build
+          key: ${{ matrix.os }}-build-${{ github.sha }}
+          restore-keys: |
+            ${{ matrix.os }}-build-${{ github.sha }}
+
+      - name: Configure CMake
+        shell: bash
+        working-directory: ${{ runner.workspace }}/build
+        run: |
+          cmake $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE=${{ env.CMAKE_CONFIG_TYPE }} \
+          -DUSE_MSVC_STATIC_RUNTIME=${{ env.USE_MSVC_STATIC_RUNTIME }} \
+          -DBUILD_DOCUMENTATION=ON
+
+      - name: Build
+        working-directory: ${{ runner.workspace }}/build
+        shell: bash
+        run: cmake --build . --config ${{ env.CMAKE_CONFIG_TYPE }}
